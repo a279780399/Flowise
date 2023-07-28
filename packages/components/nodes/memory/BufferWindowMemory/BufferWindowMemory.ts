@@ -13,32 +13,32 @@ class BufferWindowMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Buffer Window Memory'
+        this.label = '窗口缓冲存储器'
         this.name = 'bufferWindowMemory'
         this.type = 'BufferWindowMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
-        this.description = 'Uses a window of size k to surface the last k back-and-forths to use as memory'
+        this.category = '存储器'
+        this.description = '使用一个大小为k的窗口来显示最后k次对话的问答内容,作为记忆来使用。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'
             },
             {
-                label: 'Input Key',
+                label: '输入关键字',
                 name: 'inputKey',
                 type: 'string',
                 default: 'input'
             },
             {
-                label: 'Size',
+                label: '大小',
                 name: 'k',
                 type: 'number',
                 default: '4',
-                description: 'Window of size k to surface the last k back-and-forths to use as memory.'
+                description: '使用一个大小为k的窗口来显示最后k次对话的问答内容,作为记忆来使用。'
             }
         ]
     }

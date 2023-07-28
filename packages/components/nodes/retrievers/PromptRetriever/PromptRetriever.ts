@@ -11,34 +11,34 @@ class PromptRetriever_Retrievers implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Prompt Retriever'
+        this.label = '提示词检索器'
         this.name = 'promptRetriever'
-        this.type = 'PromptRetriever'
+        this.type = '提示词检索器'
         this.icon = 'promptretriever.svg'
-        this.category = 'Retrievers'
-        this.description = 'Store prompt template with name & description to be later queried by MultiPromptChain'
+        this.category = '检索器'
+        this.description = '存储提示模板以及对应的名称和描述,这样后面多提示链系统可以查询到这些提示模板。'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Prompt Name',
+                label: '提示词名称',
                 name: 'name',
                 type: 'string',
                 placeholder: 'physics-qa'
             },
             {
-                label: 'Prompt Description',
+                label: '提示词描述',
                 name: 'description',
                 type: 'string',
                 rows: 3,
-                description: 'Description of what the prompt does and when it should be used',
+                description: '描述这个提示的作用,以及在什么情况下应该使用这个提示。',
                 placeholder: 'Good for answering questions about physics'
             },
             {
-                label: 'Prompt System Message',
+                label: '提示词系统提示',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,
-                placeholder: `You are a very smart physics professor. You are great at answering questions about physics in a concise and easy to understand manner. When you don't know the answer to a question you admit that you don't know.`
+                placeholder: `你是一个非常聪明的物理学教授。你能够用简洁易懂的方式很好地回答物理学问题。当你不知道问题的答案时,你会承认你不知道。`
             }
         ]
     }

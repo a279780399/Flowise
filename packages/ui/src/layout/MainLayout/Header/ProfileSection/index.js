@@ -30,7 +30,7 @@ import { BackdropLoader } from 'ui-component/loading/BackdropLoader'
 import AboutDialog from 'ui-component/dialog/AboutDialog'
 
 // assets
-import { IconLogout, IconSettings, IconFileExport, IconFileDownload, IconInfoCircle } from '@tabler/icons'
+import { IconLogout, IconSettings, IconFileExport, IconFileDownload } from '@tabler/icons'
 
 // API
 import databaseApi from 'api/database'
@@ -206,7 +206,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileDownload stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Load Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>导入数据库</Typography>} />
                                                 </ListItemButton>
                                                 <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
@@ -215,20 +215,20 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemIcon>
                                                         <IconFileExport stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>Export Database</Typography>} />
+                                                    <ListItemText primary={<Typography variant='body2'>导出数据库</Typography>} />
                                                 </ListItemButton>
-                                                <ListItemButton
-                                                    sx={{ borderRadius: `${customization.borderRadius}px` }}
-                                                    onClick={() => {
-                                                        setOpen(false)
-                                                        setAboutDialogOpen(true)
-                                                    }}
-                                                >
-                                                    <ListItemIcon>
-                                                        <IconInfoCircle stroke={1.5} size='1.3rem' />
-                                                    </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />
-                                                </ListItemButton>
+                                                {/*<ListItemButton*/}
+                                                {/*    sx={{ borderRadius: `${customization.borderRadius}px` }}*/}
+                                                {/*    onClick={() => {*/}
+                                                {/*        setOpen(false)*/}
+                                                {/*        setAboutDialogOpen(true)*/}
+                                                {/*    }}*/}
+                                                {/*>*/}
+                                                {/*    <ListItemIcon>*/}
+                                                {/*        <IconInfoCircle stroke={1.5} size='1.3rem' />*/}
+                                                {/*    </ListItemIcon>*/}
+                                                {/*    <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />*/}
+                                                {/*</ListItemButton>*/}
                                                 {localStorage.getItem('username') && localStorage.getItem('password') && (
                                                     <ListItemButton
                                                         sx={{ borderRadius: `${customization.borderRadius}px` }}

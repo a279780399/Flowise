@@ -13,20 +13,19 @@ class RequestsPost_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Requests Post'
+        this.label = 'Post请求'
         this.name = 'requestsPost'
         this.type = 'RequestsPost'
         this.icon = 'requestspost.svg'
-        this.category = 'Tools'
-        this.description = 'Execute HTTP POST requests'
+        this.category = '工具'
+        this.description = '执行http Post请求'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsPostTool)]
         this.inputs = [
             {
                 label: 'URL',
                 name: 'url',
                 type: 'string',
-                description:
-                    'Agent will make call to this exact URL. If not specified, agent will try to figure out itself from AIPlugin if provided',
+                description: '代理会调用指定的完整URL,如果没有指定URL但提供了AIPlugin,代理会从该插件中推断出调用的URL。',
                 additionalParams: true,
                 optional: true
             },
@@ -34,18 +33,17 @@ class RequestsPost_Tools implements INode {
                 label: 'Body',
                 name: 'body',
                 type: 'json',
-                description:
-                    'JSON body for the POST request. If not specified, agent will try to figure out itself from AIPlugin if provided',
+                description: '这是POST请求的JSON格式 body。如果没有指定,而且有AIPlugin,代理会从该插件中推断出JSONbody。',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Description',
+                label: '描述',
                 name: 'description',
                 type: 'string',
                 rows: 4,
                 default: desc,
-                description: 'Acts like a prompt to tell agent when it should use this tool',
+                description: '这句话起到提示的作用,告诉代理在什么情况下该使用这个自定义工具。',
                 additionalParams: true,
                 optional: true
             },

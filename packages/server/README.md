@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD030 -->
 
-# Flowise - Low-Code LLM apps builder
+# 流思 - 零代码 LLM 应用平台
 
 ![Flowise](https://github.com/FlowiseAI/Flowise/blob/main/images/flowise.gif?raw=true)
 
@@ -34,7 +34,7 @@ FLOWISE_PASSWORD=1234
 Flowise support different environment variables to configure your instance. You can specify the following variables in the `.env` file inside `packages/server` folder. Read [more](https://docs.flowiseai.com/environment-variables)
 
 | Variable                   | Description                                                      | Type                                             | Default                             |
-| ----------------           | ---------------------------------------------------------------- | ------------------------------------------------ | ----------------------------------- |
+| -------------------------- | ---------------------------------------------------------------- | ------------------------------------------------ | ----------------------------------- |
 | PORT                       | The HTTP port Flowise runs on                                    | Number                                           | 3000                                |
 | FLOWISE_USERNAME           | Username to login                                                | String                                           |                                     |
 | FLOWISE_PASSWORD           | Password to login                                                | String                                           |                                     |

@@ -13,38 +13,38 @@ class HuggingFaceInference_LLMs implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'HuggingFace Inference'
+        this.label = 'HuggingFace'
         this.name = 'huggingFaceInference_LLMs'
         this.type = 'HuggingFaceInference'
         this.icon = 'huggingface.png'
-        this.category = 'LLMs'
-        this.description = 'Wrapper around HuggingFace large language models'
+        this.category = '大型语言模型'
+        this.description = 'HuggingFace大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInference)]
         this.inputs = [
             {
-                label: 'Model',
+                label: '模型名称',
                 name: 'model',
                 type: 'string',
                 placeholder: 'gpt2'
             },
             {
-                label: 'HuggingFace Api Key',
+                label: 'HuggingFace Api密钥',
                 name: 'apiKey',
                 type: 'password'
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
-                description: 'Temperature parameter may not apply to certain model. Please check available model parameters',
+                description: '温度参数可能不适用于某些模型。请检查可用的模型参数',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokens',
                 type: 'number',
-                description: 'Max Tokens parameter may not apply to certain model. Please check available model parameters',
+                description: '最大Token数参数可能不适用于某些模型。请检查可用的模型参数',
                 optional: true,
                 additionalParams: true
             },
@@ -52,7 +52,7 @@ class HuggingFaceInference_LLMs implements INode {
                 label: 'Top Probability',
                 name: 'topP',
                 type: 'number',
-                description: 'Top Probability parameter may not apply to certain model. Please check available model parameters',
+                description: 'Top Probability参数可能不适用于某些模型。请检查可用的模型参数',
                 optional: true,
                 additionalParams: true
             },
@@ -60,24 +60,24 @@ class HuggingFaceInference_LLMs implements INode {
                 label: 'Top K',
                 name: 'hfTopK',
                 type: 'number',
-                description: 'Top K parameter may not apply to certain model. Please check available model parameters',
+                description: 'Top K 参数可能不适用于某些模型。请检查可用的模型参数',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
-                description: 'Frequency Penalty parameter may not apply to certain model. Please check available model parameters',
+                description: '频率惩罚参数可能不适用于某些模型。请检查可用的模型参数',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Endpoint',
+                label: '端点',
                 name: 'endpoint',
                 type: 'string',
                 placeholder: 'https://xyz.eu-west-1.aws.endpoints.huggingface.cloud/gpt2',
-                description: 'Using your own inference endpoint',
+                description: '使用自定义的推理端点',
                 optional: true,
                 additionalParams: true
             }

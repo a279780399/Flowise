@@ -15,30 +15,30 @@ class Faiss_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Faiss Load Existing Index'
+        this.label = 'Faiss 向量加载器'
         this.name = 'faissExistingIndex'
         this.type = 'Faiss'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Faiss (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从Faiss向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Base Path to load',
+                label: 'Faiss索引路径',
                 name: 'basePath',
-                description: 'Path to load faiss.index file',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                description: '加载faiss.index文件的路径。',
+                placeholder: `C:\\Users\\Desktop`,
                 type: 'string'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -47,12 +47,12 @@ class Faiss_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Faiss Retriever',
+                label: 'Faiss 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Faiss Vector Store',
+                label: 'Faiss 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(FaissStore)]
             }

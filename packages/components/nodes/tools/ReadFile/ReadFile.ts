@@ -14,16 +14,16 @@ class ReadFile_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Read File'
+        this.label = '读取文件'
         this.name = 'readFile'
         this.type = 'ReadFile'
         this.icon = 'readfile.svg'
-        this.category = 'Tools'
-        this.description = 'Read file from disk'
+        this.category = '工具'
+        this.description = '从磁盘读取文件。'
         this.baseClasses = [this.type, 'Tool', ...getBaseClasses(ReadFileTool)]
         this.inputs = [
             {
-                label: 'Base Path',
+                label: '文件路径',
                 name: 'basePath',
                 placeholder: `C:\\Users\\User\\Desktop`,
                 type: 'string',

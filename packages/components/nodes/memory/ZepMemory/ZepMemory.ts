@@ -15,12 +15,12 @@ class ZepMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Zep Memory'
+        this.label = 'Zep存储器'
         this.name = 'ZepMemory'
         this.type = 'ZepMemory'
         this.icon = 'zep.png'
-        this.category = 'Memory'
-        this.description = 'Summarizes the conversation and stores the memory in zep server'
+        this.category = '存储器'
+        this.description = '总结对话内容,并将生成的记忆存储在Zep服务中。'
         this.baseClasses = [this.type, ...getBaseClasses(ZepMemory)]
         this.inputs = [
             {
@@ -30,71 +30,71 @@ class ZepMemory_Memory implements INode {
                 default: 'http://127.0.0.1:8000'
             },
             {
-                label: 'Auto Summary',
+                label: '自动摘要',
                 name: 'autoSummary',
                 type: 'boolean',
                 default: true
             },
             {
-                label: 'Session Id',
+                label: '会话id',
                 name: 'sessionId',
                 type: 'string',
-                description: 'if empty, chatId will be used automatically',
+                description: '如果为空,将自动使用chatId',
                 default: '',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'API Key',
+                label: 'API密钥',
                 name: 'apiKey',
                 type: 'password',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Size',
+                label: '大小',
                 name: 'k',
                 type: 'number',
                 default: '10',
-                description: 'Window of size k to surface the last k back-and-forths to use as memory.'
+                description: '使用一个大小为k的窗口来显示最后k次对话的问答内容,作为记忆来使用。'
             },
             {
-                label: 'Auto Summary Template',
+                label: '自动摘要模板',
                 name: 'autoSummaryTemplate',
                 type: 'string',
-                default: 'This is the summary of the following conversation:\n{summary}',
+                default: '以下是对以下对话的摘要:\n{摘要}',
                 additionalParams: true
             },
             {
-                label: 'AI Prefix',
+                label: 'AI前缀',
                 name: 'aiPrefix',
                 type: 'string',
                 default: 'ai',
                 additionalParams: true
             },
             {
-                label: 'Human Prefix',
+                label: '用户前缀',
                 name: 'humanPrefix',
                 type: 'string',
                 default: 'human',
                 additionalParams: true
             },
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history',
                 additionalParams: true
             },
             {
-                label: 'Input Key',
+                label: '输入关键字',
                 name: 'inputKey',
                 type: 'string',
                 default: 'input',
                 additionalParams: true
             },
             {
-                label: 'Output Key',
+                label: '输出关键字',
                 name: 'outputKey',
                 type: 'string',
                 default: 'text',

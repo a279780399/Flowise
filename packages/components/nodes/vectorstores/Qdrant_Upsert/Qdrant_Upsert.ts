@@ -18,38 +18,38 @@ class QdrantUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Qdrant Upsert Document'
+        this.label = 'Qdrant 向量更新插入'
         this.name = 'qdrantUpsert'
         this.type = 'Qdrant'
         this.icon = 'qdrant_logo.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to Qdrant'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到Qdrant的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Qdrant Server URL',
+                label: 'Qdrant URL',
                 name: 'qdrantServerUrl',
                 type: 'string',
                 placeholder: 'http://localhost:6333'
             },
             {
-                label: 'Qdrant Collection Name',
+                label: 'Qdrant集合名称',
                 name: 'qdrantCollection',
                 type: 'string'
             },
             {
-                label: 'Qdrant API Key',
+                label: 'Qdrant API密钥',
                 name: 'qdrantApiKey',
                 type: 'password',
                 optional: true
@@ -57,7 +57,7 @@ class QdrantUpsert_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -66,12 +66,12 @@ class QdrantUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Qdrant Retriever',
+                label: 'Qdrant 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Qdrant Vector Store',
+                label: 'Qdrant 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(QdrantVectorStore)]
             }

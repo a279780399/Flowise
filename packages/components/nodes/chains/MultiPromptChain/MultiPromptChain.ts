@@ -15,21 +15,21 @@ class MultiPromptChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Multi Prompt Chain'
+        this.label = '多提示词模板链'
         this.name = 'multiPromptChain'
         this.type = 'MultiPromptChain'
         this.icon = 'chain.svg'
-        this.category = 'Chains'
-        this.description = 'Chain automatically picks an appropriate prompt from multiple prompt templates'
+        this.category = '链'
+        this.description = '链自动从多个提示词模板中选择合适的提示'
         this.baseClasses = [this.type, ...getBaseClasses(MultiPromptChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Prompt Retriever',
+                label: '提示词检索器',
                 name: 'promptRetriever',
                 type: 'PromptRetriever',
                 list: true

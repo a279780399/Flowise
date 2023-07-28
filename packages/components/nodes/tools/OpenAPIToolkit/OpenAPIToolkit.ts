@@ -19,21 +19,21 @@ class OpenAPIToolkit_Tools implements INode {
         this.name = 'openAPIToolkit'
         this.type = 'OpenAPIToolkit'
         this.icon = 'openapi.png'
-        this.category = 'Tools'
-        this.description = 'Load OpenAPI specification'
+        this.category = '工具'
+        this.description = '加载OpenAPI规范文档。'
         this.inputs = [
             {
-                label: 'OpenAI API Key',
+                label: 'OpenAI API密钥',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'YAML File',
+                label: 'YAML文件',
                 name: 'yamlFile',
                 type: 'file',
                 fileType: '.yaml'

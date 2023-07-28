@@ -16,42 +16,42 @@ class Figma_DocumentLoaders implements INode {
         this.name = 'figma'
         this.type = 'Document'
         this.icon = 'figma.png'
-        this.category = 'Document Loaders'
-        this.description = 'Load data from a Figma file'
+        this.category = '文档加载器'
+        this.description = '加载Figma文件'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Access Token',
+                label: '访问令牌',
                 name: 'accessToken',
                 type: 'password',
                 placeholder: '<FIGMA_ACCESS_TOKEN>'
             },
             {
-                label: 'File Key',
+                label: '文件Key',
                 name: 'fileKey',
                 type: 'string',
                 placeholder: 'key'
             },
             {
-                label: 'Node IDs',
+                label: '节点IDs',
                 name: 'nodeIds',
                 type: 'string',
                 placeholder: '0, 1, 2'
             },
             {
-                label: 'Recursive',
+                label: '递归',
                 name: 'recursive',
                 type: 'boolean',
                 optional: true
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

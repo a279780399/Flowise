@@ -356,7 +356,7 @@ const ShareChatbot = () => {
                     {`${baseURL}/chatbot/${chatflowid}`}
                 </Typography>
                 <IconButton
-                    title='Copy Link'
+                    title='复制链接'
                     color='success'
                     onClick={(event) => {
                         navigator.clipboard.writeText(`${baseURL}/chatbot/${chatflowid}`)
@@ -368,7 +368,7 @@ const ShareChatbot = () => {
                 >
                     <IconCopy />
                 </IconButton>
-                <IconButton title='Open New Tab' color='primary' onClick={() => window.open(`${baseURL}/chatbot/${chatflowid}`, '_blank')}>
+                <IconButton title='打开新窗口' color='primary' onClick={() => window.open(`${baseURL}/chatbot/${chatflowid}`, '_blank')}>
                     <IconArrowUpRightCircle />
                 </IconButton>
                 <div style={{ flex: 1 }} />
@@ -380,59 +380,56 @@ const ShareChatbot = () => {
                             onSwitchChange(event.target.checked)
                         }}
                     />
-                    <Typography>Make Public</Typography>
-                    <TooltipWithParser
-                        style={{ marginLeft: 10 }}
-                        title={'Making public will allow anyone to access the chatbot without username & password'}
-                    />
+                    <Typography>开放</Typography>
+                    <TooltipWithParser style={{ marginLeft: 10 }} title={'开放后将允许任何人在不需要用户名和密码的情况下访问聊天机器人'} />
                 </div>
             </Stack>
-            {textField(welcomeMessage, 'welcomeMessage', 'Welcome Message', 'string', 'Hello! This is custom welcome message')}
-            {colorField(backgroundColor, 'backgroundColor', 'Background Color')}
-            {textField(fontSize, 'fontSize', 'Font Size', 'number')}
-            {colorField(poweredByTextColor, 'poweredByTextColor', 'PoweredBy TextColor')}
+            {textField(welcomeMessage, 'welcomeMessage', '欢迎语', 'string', '自定义的欢迎语')}
+            {colorField(backgroundColor, 'backgroundColor', '背景颜色')}
+            {textField(fontSize, 'fontSize', '字体大小', 'number')}
+            {colorField(poweredByTextColor, 'poweredByTextColor', '文本颜色')}
 
             {/*BOT Message*/}
             <Typography variant='h4' sx={{ mb: 1, mt: 2 }}>
-                Bot Message
+                机器人消息
             </Typography>
-            {colorField(botMessageBackgroundColor, 'botMessageBackgroundColor', 'Background Color')}
-            {colorField(botMessageTextColor, 'botMessageTextColor', 'Text Color')}
+            {colorField(botMessageBackgroundColor, 'botMessageBackgroundColor', '背景颜色')}
+            {colorField(botMessageTextColor, 'botMessageTextColor', '文本颜色')}
             {textField(
                 botMessageAvatarSrc,
                 'botMessageAvatarSrc',
-                'Avatar Link',
+                '头像链接',
                 'string',
                 `https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png`
             )}
-            {booleanField(botMessageShowAvatar, 'botMessageShowAvatar', 'Show Avatar')}
+            {booleanField(botMessageShowAvatar, 'botMessageShowAvatar', '展示头像')}
 
             {/*USER Message*/}
             <Typography variant='h4' sx={{ mb: 1, mt: 2 }}>
-                User Message
+                用户消息
             </Typography>
-            {colorField(userMessageBackgroundColor, 'userMessageBackgroundColor', 'Background Color')}
-            {colorField(userMessageTextColor, 'userMessageTextColor', 'Text Color')}
+            {colorField(userMessageBackgroundColor, 'userMessageBackgroundColor', '背景颜色')}
+            {colorField(userMessageTextColor, 'userMessageTextColor', '文本颜色')}
             {textField(
                 userMessageAvatarSrc,
                 'userMessageAvatarSrc',
-                'Avatar Link',
+                '头像链接',
                 'string',
                 `https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png`
             )}
-            {booleanField(userMessageShowAvatar, 'userMessageShowAvatar', 'Show Avatar')}
+            {booleanField(userMessageShowAvatar, 'userMessageShowAvatar', '展示头像')}
 
             {/*TEXT Input*/}
             <Typography variant='h4' sx={{ mb: 1, mt: 2 }}>
-                Text Input
+                文本输入
             </Typography>
-            {colorField(textInputBackgroundColor, 'textInputBackgroundColor', 'Background Color')}
-            {colorField(textInputTextColor, 'textInputTextColor', 'Text Color')}
-            {textField(textInputPlaceholder, 'textInputPlaceholder', 'TextInput Placeholder', 'string', `Type question..`)}
-            {colorField(textInputSendButtonColor, 'textInputSendButtonColor', 'TextIntput Send Button Color')}
+            {colorField(textInputBackgroundColor, 'textInputBackgroundColor', '背景颜色')}
+            {colorField(textInputTextColor, 'textInputTextColor', '文本颜色')}
+            {textField(textInputPlaceholder, 'textInputPlaceholder', '文本输入占位符', 'string', `输入问题...`)}
+            {colorField(textInputSendButtonColor, 'textInputSendButtonColor', '文本发送按钮颜色')}
 
             <StyledButton style={{ marginBottom: 10, marginTop: 10 }} variant='contained' onClick={() => onSave()}>
-                Save Changes
+                保存
             </StyledButton>
             <Popover
                 open={openColorPopOver}

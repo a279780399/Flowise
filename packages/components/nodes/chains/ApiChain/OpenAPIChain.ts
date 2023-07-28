@@ -15,32 +15,32 @@ class OpenApiChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAPI Chain'
+        this.label = 'OpenAPI链'
         this.name = 'openApiChain'
         this.type = 'openApiChain'
         this.icon = 'openapi.png'
-        this.category = 'Chains'
-        this.description = 'Chain to run queries against OpenAPI'
+        this.category = '链'
+        this.description = '针对OpenAPI运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [
             {
-                label: 'ChatOpenAI Model',
+                label: 'ChatOpenAI模型',
                 name: 'model',
                 type: 'ChatOpenAI'
             },
             {
-                label: 'YAML Link',
+                label: 'YAML链接',
                 name: 'yamlLink',
                 type: 'string',
                 placeholder: 'https://api.speak.com/openapi.yaml',
-                description: 'If YAML link is provided, uploaded YAML File will be ignored and YAML link will be used instead'
+                description: '如果提供了YAML链接,上传的YAML文件将被忽略,而是使用YAML链接'
             },
             {
-                label: 'YAML File',
+                label: 'YAML文件',
                 name: 'yamlFile',
                 type: 'file',
                 fileType: '.yaml',
-                description: 'If YAML link is provided, uploaded YAML File will be ignored and YAML link will be used instead'
+                description: '如果提供了YAML链接,上传的YAML文件将被忽略,而是使用YAML链接'
             },
             {
                 label: 'Headers',

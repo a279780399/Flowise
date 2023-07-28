@@ -18,34 +18,34 @@ class OpenAIFunctionAgent_Agents implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAI Function Agent'
+        this.label = 'OpenAI函数代理'
         this.name = 'openAIFunctionAgent'
-        this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.type = '代理执行器'
+        this.category = '代理'
         this.icon = 'openai.png'
-        this.description = `An agent that uses OpenAI's Function Calling functionality to pick the tool and args to call`
+        this.description = `这个代理利用了OpenAI的函数调用功能,来选择需要调用的工具以及相应的调用参数。`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '可用工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '存储器',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'OpenAI Chat Model',
+                label: 'OpenAI聊天模型',
                 name: 'model',
                 description:
-                    'Only works with gpt-3.5-turbo-0613 and gpt-4-0613. Refer <a target="_blank" href="https://platform.openai.com/docs/guides/gpt/function-calling">docs</a> for more info',
+                    '仅适用于 gpt-3.5-turbo-0613 和 gpt-4-0613。请参考 <a target="_blank" href="https://platform.openai.com/docs/guides/gpt/function-calling">docs</a> for more info',
                 type: 'BaseChatModel'
             },
             {
-                label: 'System Message',
+                label: '系统提示',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,

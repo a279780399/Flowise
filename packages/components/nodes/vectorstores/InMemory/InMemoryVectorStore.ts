@@ -17,29 +17,29 @@ class InMemoryVectorStore_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'In-Memory Vector Store'
+        this.label = '内存 向量加载器'
         this.name = 'memoryVectorStore'
         this.type = 'Memory'
         this.icon = 'memory.svg'
-        this.category = 'Vector Stores'
-        this.description = 'In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.'
+        this.category = '向量存储'
+        this.description = '基于内存中的向量存储,它可以存储向量(embeddings),并实现高效的精确线性搜索,以找出与查询向量最相似的向量表示。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 optional: true
@@ -47,12 +47,12 @@ class InMemoryVectorStore_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Memory Retriever',
+                label: 'Memory 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Memory Vector Store',
+                label: 'Memory 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(MemoryVectorStore)]
             }

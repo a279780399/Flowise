@@ -13,36 +13,36 @@ class Json_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Json File'
+        this.label = 'Json文件'
         this.name = 'jsonFile'
         this.type = 'Document'
         this.icon = 'json.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from JSON files`
+        this.category = '文档加载器'
+        this.description = `加载JSON文件数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Json File',
+                label: 'Json文件',
                 name: 'jsonFile',
                 type: 'file',
                 fileType: '.json'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Pointers Extraction (separated by commas)',
+                label: '指针提取(以逗号分隔)',
                 name: 'pointersName',
                 type: 'string',
-                description: 'Extracting multiple pointers',
-                placeholder: 'Enter pointers name',
+                description: '提取多个指针',
+                placeholder: '输入指针名称',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

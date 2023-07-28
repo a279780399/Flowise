@@ -16,38 +16,38 @@ class Qdrant_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Qdrant Load Existing Index'
+        this.label = 'Qdrant 向量加载器'
         this.name = 'qdrantExistingIndex'
         this.type = 'Qdrant'
         this.icon = 'qdrant_logo.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Qdrant (i.e., documents have been upserted)'
+        this.category = '向量存储'
+        this.description = '从Qdrant向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Qdrant Server URL',
+                label: 'Qdrant URL',
                 name: 'qdrantServerUrl',
                 type: 'string',
                 placeholder: 'http://localhost:6333'
             },
             {
-                label: 'Qdrant Collection Name',
+                label: 'Qdrant集合名称',
                 name: 'qdrantCollection',
                 type: 'string'
             },
             {
-                label: 'Qdrant API Key',
+                label: 'Qdrant API密钥',
                 name: 'qdrantApiKey',
                 type: 'password',
                 optional: true
             },
             {
-                label: 'Qdrant Collection Cofiguration',
+                label: 'Qdrant集合配置',
                 name: 'qdrantCollectionCofiguration',
                 type: 'json',
                 optional: true,
@@ -56,7 +56,7 @@ class Qdrant_Existing_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -65,12 +65,12 @@ class Qdrant_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Qdrant Retriever',
+                label: 'Qdrant 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Qdrant Vector Store',
+                label: 'Qdrant 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(QdrantVectorStore)]
             }

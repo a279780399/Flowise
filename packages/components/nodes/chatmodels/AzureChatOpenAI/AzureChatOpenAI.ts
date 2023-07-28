@@ -14,21 +14,21 @@ class AzureChatOpenAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure ChatOpenAI'
+        this.label = 'Azure'
         this.name = 'azureChatOpenAI'
         this.type = 'AzureChatOpenAI'
         this.icon = 'Azure.svg'
-        this.category = 'Chat Models'
-        this.description = 'Wrapper around Azure OpenAI large language models that use the Chat endpoint'
+        this.category = '对话模型'
+        this.description = '封装了Azure OpenAI的大型语言模型服务,通过Chat endpoint来使用这些模型进行聊天交互。'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Azure Api密钥',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -53,55 +53,55 @@ class AzureChatOpenAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Azure Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Azure Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Azure Api版本号',
                 name: 'azureOpenAIApiVersion',
                 type: 'string',
                 placeholder: '2023-06-01-preview',
                 description:
-                    'Description of Supported API Versions. Please refer <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#chat-completions">examples</a>'
+                    '支持的 API 版本说明。请参考 <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#chat-completions">examples</a>'
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

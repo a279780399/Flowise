@@ -17,27 +17,27 @@ class ChromaUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Chroma Upsert Document'
+        this.label = 'Chroma 向量更新插入'
         this.name = 'chromaUpsert'
         this.type = 'Chroma'
         this.icon = 'chroma.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to Chroma'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到Chroma的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Collection Name',
+                label: '集合名称',
                 name: 'collectionName',
                 type: 'string'
             },
@@ -50,7 +50,7 @@ class ChromaUpsert_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -59,12 +59,12 @@ class ChromaUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Chroma Retriever',
+                label: 'Chroma 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Chroma Vector Store',
+                label: 'Chroma 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(Chroma)]
             }

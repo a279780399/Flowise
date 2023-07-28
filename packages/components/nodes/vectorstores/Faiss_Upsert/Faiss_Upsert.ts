@@ -17,36 +17,36 @@ class FaissUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Faiss Upsert Document'
+        this.label = 'Faiss 向量更新插入'
         this.name = 'faissUpsert'
         this.type = 'Faiss'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to Faiss'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到Faiss的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Base Path to store',
+                label: 'Faiss索引路径',
                 name: 'basePath',
-                description: 'Path to store faiss.index file',
-                placeholder: `C:\\Users\\User\\Desktop`,
+                description: '加载faiss.index文件的路径。',
+                placeholder: `C:\\Users\\Desktop`,
                 type: 'string'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -55,12 +55,12 @@ class FaissUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Faiss Retriever',
+                label: 'Faiss 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Faiss Vector Store',
+                label: 'Faiss 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(FaissStore)]
             }

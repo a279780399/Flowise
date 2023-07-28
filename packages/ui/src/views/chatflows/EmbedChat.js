@@ -223,7 +223,7 @@ const App = () => {
 }
 
 const EmbedChat = ({ chatflowid }) => {
-    const codes = ['Popup Html', 'Fullpage Html', 'Popup React', 'Fullpage React']
+    const codes = ['弹窗 Html', '全屏 Html', '弹窗 React', '全屏 React']
     const [value, setValue] = useState(0)
     const [embedChatCheckboxVal, setEmbedChatCheckbox] = useState(false)
 
@@ -237,13 +237,13 @@ const EmbedChat = ({ chatflowid }) => {
 
     const getCode = (codeLang) => {
         switch (codeLang) {
-            case 'Popup Html':
+            case '弹窗 Html':
                 return embedPopupHtmlCode(chatflowid)
-            case 'Fullpage Html':
+            case '全屏 Html':
                 return embedFullpageHtmlCode(chatflowid)
-            case 'Popup React':
+            case '弹窗 React':
                 return embedPopupReactCode(chatflowid)
-            case 'Fullpage React':
+            case '全屏 React':
                 return embedFullpageReactCode(chatflowid)
             default:
                 return ''
@@ -252,13 +252,13 @@ const EmbedChat = ({ chatflowid }) => {
 
     const getCodeCustomization = (codeLang) => {
         switch (codeLang) {
-            case 'Popup Html':
+            case '弹窗 Html':
                 return embedPopupHtmlCodeCustomization(chatflowid)
-            case 'Fullpage Html':
+            case '全屏 Html':
                 return embedFullpageHtmlCodeCustomization(chatflowid)
-            case 'Popup React':
+            case '弹窗 React':
                 return embedPopupReactCodeCustomization(chatflowid)
-            case 'Fullpage React':
+            case '全屏 React':
                 return embedFullpageReactCodeCustomization(chatflowid)
             default:
                 return ''
@@ -282,17 +282,9 @@ const EmbedChat = ({ chatflowid }) => {
                     {(value === 0 || value === 1) && (
                         <>
                             <span>
-                                Paste this anywhere in the <code>{`<body>`}</code> tag of your html file.
+                                将其粘贴到html文件的<code>{`<body>`}</code>标记中的任何位置。
                                 <p>
-                                    You can also specify a&nbsp;
-                                    <a
-                                        rel='noreferrer'
-                                        target='_blank'
-                                        href='https://www.npmjs.com/package/flowise-embed?activeTab=versions'
-                                    >
-                                        version
-                                    </a>
-                                    :&nbsp;<code>{`https://cdn.jsdelivr.net/npm/flowise-embed@<version>/dist/web.js`}</code>
+                                    您也可以指定一个版本<code>{`npm/flowise-embed@<version>/dist/web.js`}</code>
                                 </p>
                             </span>
                             <div style={{ height: 10 }}></div>
@@ -300,7 +292,7 @@ const EmbedChat = ({ chatflowid }) => {
                     )}
                     <CopyBlock theme={atomOneDark} text={getCode(codeLang)} language='javascript' showLineNumbers={false} wrapLines />
 
-                    <CheckboxInput label='Show Embed Chat Config' value={embedChatCheckboxVal} onChange={onCheckBoxEmbedChatChanged} />
+                    <CheckboxInput label='显示嵌入聊天配置' value={embedChatCheckboxVal} onChange={onCheckBoxEmbedChatChanged} />
 
                     {embedChatCheckboxVal && (
                         <CopyBlock

@@ -13,28 +13,28 @@ class Subtitles_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Subtitles File'
+        this.label = 'Subtitles文件'
         this.name = 'subtitlesFile'
         this.type = 'Document'
         this.icon = 'subtitlesFile.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from subtitles files`
+        this.category = '文档加载器'
+        this.description = `从subtitles文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Subtitles File',
+                label: 'Subtitles文件',
                 name: 'subtitlesFile',
                 type: 'file',
                 fileType: '.srt'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

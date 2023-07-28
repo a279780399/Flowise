@@ -13,12 +13,12 @@ class MakeWebhook_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Make.com Webhook'
+        this.label = 'Make.com网络钩子'
         this.name = 'makeWebhook'
         this.type = 'MakeWebhook'
         this.icon = 'make.png'
-        this.category = 'Tools'
-        this.description = 'Execute webhook calls on Make.com'
+        this.category = '工具'
+        this.description = '在Make.com这个开发平台上,执行网络钩子的调用。'
         this.inputs = [
             {
                 label: 'Webhook Url',
@@ -27,11 +27,11 @@ class MakeWebhook_Tools implements INode {
                 placeholder: 'https://hook.eu1.make.com/abcdefg'
             },
             {
-                label: 'Tool Description',
+                label: '工具描述',
                 name: 'desc',
                 type: 'string',
                 rows: 4,
-                placeholder: 'Useful when need to send message to Discord'
+                placeholder: '当需要向Discord发送消息时,可以使用这个功能'
             }
         ]
         this.baseClasses = [this.type, ...getBaseClasses(MakeWebhookTool)]

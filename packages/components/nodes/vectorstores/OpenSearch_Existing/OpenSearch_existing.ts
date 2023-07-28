@@ -16,16 +16,16 @@ class OpenSearch_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'OpenSearch Load Existing Index'
+        this.label = 'OpenSearch 向量加载器'
         this.name = 'openSearchExistingIndex'
         this.type = 'OpenSearch'
         this.icon = 'opensearch.png'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from OpenSearch (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从OpenSearch向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
@@ -36,14 +36,14 @@ class OpenSearch_Existing_VectorStores implements INode {
                 placeholder: 'http://127.0.0.1:9200'
             },
             {
-                label: 'Index Name',
+                label: '索引名称',
                 name: 'indexName',
                 type: 'string'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -52,12 +52,12 @@ class OpenSearch_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'OpenSearch Retriever',
+                label: 'OpenSearch 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'OpenSearch Vector Store',
+                label: 'OpenSearch 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(OpenSearchVectorStore)]
             }

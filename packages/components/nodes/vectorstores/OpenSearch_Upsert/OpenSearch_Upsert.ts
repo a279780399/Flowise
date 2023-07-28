@@ -18,22 +18,22 @@ class OpenSearchUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'OpenSearch Upsert Document'
+        this.label = 'OpenSearch 向量更新插入'
         this.name = 'openSearchUpsertDocument'
         this.type = 'OpenSearch'
         this.icon = 'opensearch.png'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to OpenSearch'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到OpenSearch的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
@@ -44,14 +44,14 @@ class OpenSearchUpsert_VectorStores implements INode {
                 placeholder: 'http://127.0.0.1:9200'
             },
             {
-                label: 'Index Name',
+                label: '索引名称',
                 name: 'indexName',
                 type: 'string'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -60,12 +60,12 @@ class OpenSearchUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'OpenSearch Retriever',
+                label: 'OpenSearch 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'OpenSearch Vector Store',
+                label: 'OpenSearch 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(OpenSearchVectorStore)]
             }

@@ -13,35 +13,35 @@ class Jsonlines_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Json Lines File'
+        this.label = 'Json Lines文件'
         this.name = 'jsonlinesFile'
         this.type = 'Document'
         this.icon = 'jsonlines.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from JSON Lines files`
+        this.category = '文档加载器'
+        this.description = `加载JSON Lines文件`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Jsonlines File',
+                label: 'Jsonlines文件',
                 name: 'jsonlinesFile',
                 type: 'file',
                 fileType: '.jsonl'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Pointer Extraction',
+                label: '指针提取',
                 name: 'pointerName',
                 type: 'string',
-                placeholder: 'Enter pointer name',
+                placeholder: '输入指针名称',
                 optional: false
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

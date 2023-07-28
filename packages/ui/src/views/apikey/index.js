@@ -171,11 +171,11 @@ const APIKey = () => {
         <>
             <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
                 <Stack flexDirection='row'>
-                    <h1>API Keys&nbsp;</h1>
+                    <h1 style={{ whiteSpace: 'nowrap' }}>API 密钥管理&nbsp;</h1>
                     <Box sx={{ flexGrow: 1 }} />
 
                     <StyledButton variant='contained' sx={{ color: 'white', mr: 1, height: 37 }} onClick={addNew} startIcon={<IconPlus />}>
-                        Create Key
+                        新建密钥
                     </StyledButton>
                 </Stack>
                 {apiKeys.length <= 0 && (
@@ -183,7 +183,7 @@ const APIKey = () => {
                         <Box sx={{ p: 2, height: 'auto' }}>
                             <img style={{ objectFit: 'cover', height: '30vh', width: 'auto' }} src={APIEmptySVG} alt='APIEmptySVG' />
                         </Box>
-                        <div>No API Keys Yet</div>
+                        <div>暂无API密钥</div>
                     </Stack>
                 )}
                 {apiKeys.length > 0 && (
@@ -191,11 +191,11 @@ const APIKey = () => {
                         <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Key Name</TableCell>
-                                    <TableCell>API Key</TableCell>
-                                    <TableCell>Created</TableCell>
-                                    <TableCell> </TableCell>
-                                    <TableCell> </TableCell>
+                                    <TableCell>密钥名称</TableCell>
+                                    <TableCell>API 密钥</TableCell>
+                                    <TableCell>创建时间</TableCell>
+                                    <TableCell>编辑</TableCell>
+                                    <TableCell>删除</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -211,7 +211,7 @@ const APIKey = () => {
                                                       key.apiKey.length - 5
                                                   )}`}
                                             <IconButton
-                                                title='Copy'
+                                                title='复制'
                                                 color='success'
                                                 onClick={(event) => {
                                                     navigator.clipboard.writeText(key.apiKey)
@@ -223,7 +223,7 @@ const APIKey = () => {
                                             >
                                                 <IconCopy />
                                             </IconButton>
-                                            <IconButton title='Show' color='inherit' onClick={() => onShowApiKeyClick(key.apiKey)}>
+                                            <IconButton title='查看' color='inherit' onClick={() => onShowApiKeyClick(key.apiKey)}>
                                                 {showApiKeys.includes(key.apiKey) ? <IconEyeOff /> : <IconEye />}
                                             </IconButton>
                                             <Popover

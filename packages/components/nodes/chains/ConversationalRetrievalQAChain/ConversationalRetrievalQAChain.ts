@@ -39,67 +39,66 @@ class ConversationalRetrievalQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Conversational Retrieval QA Chain'
+        this.label = '会话式检索问答链'
         this.name = 'conversationalRetrievalQAChain'
         this.type = 'ConversationalRetrievalQAChain'
         this.icon = 'chain.svg'
-        this.category = 'Chains'
-        this.description = 'Document QA - built on RetrievalQAChain to provide a chat history component'
+        this.category = '链'
+        this.description = '文档问答 - 基于检索问答链构建,提供聊天历史组件'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationalRetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量存储检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },
             {
-                label: 'Memory',
+                label: '存储器',
                 name: 'memory',
                 type: 'DynamoDBChatMemory | RedisBackedChatMemory | ZepMemory',
                 optional: true,
-                description: 'If no memory connected, default BufferMemory will be used'
+                description: '如果未连接内存,将使用默认的BufferMemory'
             },
             {
-                label: 'Return Source Documents',
+                label: '返回源文档',
                 name: 'returnSourceDocuments',
                 type: 'boolean',
                 optional: true
             },
             {
-                label: 'System Message',
+                label: '系统提示',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,
                 additionalParams: true,
                 optional: true,
                 placeholder:
-                    'I want you to act as a document that I am having a conversation with. Your name is "AI Assistant". You will provide me with answers from the given info. If the answer is not included, say exactly "Hmm, I am not sure." and stop after that. Refuse to answer any question not about the info. Never break character.'
+                    '我希望你扮演我正在与之对话的文档。你的名字是“AI助手”。你将从给定的信息中为我提供答案。如果答案未包含在内,请准确地说“嗯,我不确定。”并在此之后停止。拒绝回答任何不关于该信息的问题。永远不要打破角色。'
             },
             {
-                label: 'Chain Option',
+                label: '链选项',
                 name: 'chainOption',
                 type: 'options',
                 options: [
                     {
-                        label: 'MapReduceDocumentsChain',
+                        label: 'MapReduce文档链',
                         name: 'map_reduce',
-                        description:
-                            'Suitable for QA tasks over larger documents and can run the preprocessing step in parallel, reducing the running time'
+                        description: '适用于较大文档上的问答任务,可以并行运行预处理步骤,减少运行时间'
                     },
                     {
-                        label: 'RefineDocumentsChain',
+                        label: '优化文档链',
                         name: 'refine',
-                        description: 'Suitable for QA tasks over a large number of documents.'
+                        description: '适用于大量文档的问答任务。'
                     },
                     {
-                        label: 'StuffDocumentsChain',
+                        label: '填充文档链',
                         name: 'stuff',
-                        description: 'Suitable for QA tasks over a small number of documents.'
+                        description: '适用于少量文档的问答任务。'
                     }
                 ],
                 additionalParams: true,

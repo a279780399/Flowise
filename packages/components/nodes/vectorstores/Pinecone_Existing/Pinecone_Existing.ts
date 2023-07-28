@@ -16,36 +16,36 @@ class Pinecone_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Pinecone Load Existing Index'
+        this.label = 'Pinecone 向量加载器'
         this.name = 'pineconeExistingIndex'
         this.type = 'Pinecone'
         this.icon = 'pinecone.png'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Pinecone (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从Pinecone向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Pinecone Api Key',
+                label: 'Pinecone Api密钥',
                 name: 'pineconeApiKey',
                 type: 'password'
             },
             {
-                label: 'Pinecone Environment',
+                label: 'Pinecone环境',
                 name: 'pineconeEnv',
                 type: 'string'
             },
             {
-                label: 'Pinecone Index',
+                label: 'Pinecone索引',
                 name: 'pineconeIndex',
                 type: 'string'
             },
             {
-                label: 'Pinecone Namespace',
+                label: 'Pinecone命名空间',
                 name: 'pineconeNamespace',
                 type: 'string',
                 placeholder: 'my-first-namespace',
@@ -53,7 +53,7 @@ class Pinecone_Existing_VectorStores implements INode {
                 optional: true
             },
             {
-                label: 'Pinecone Metadata Filter',
+                label: 'Pinecone元数据过滤',
                 name: 'pineconeMetadataFilter',
                 type: 'json',
                 optional: true,
@@ -62,7 +62,7 @@ class Pinecone_Existing_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -71,12 +71,12 @@ class Pinecone_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Pinecone Retriever',
+                label: 'Pinecone 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Pinecone Vector Store',
+                label: 'Pinecone 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(PineconeStore)]
             }

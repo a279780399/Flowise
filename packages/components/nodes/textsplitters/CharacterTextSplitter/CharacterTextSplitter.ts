@@ -13,29 +13,29 @@ class CharacterTextSplitter_TextSplitters implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Character Text Splitter'
+        this.label = '字符文本切分器'
         this.name = 'characterTextSplitter'
-        this.type = 'CharacterTextSplitter'
+        this.type = '字符文本拆分器'
         this.icon = 'textsplitter.svg'
-        this.category = 'Text Splitters'
-        this.description = `splits only on one type of character (defaults to "\\n\\n").`
+        this.category = '文本切分器'
+        this.description = `根据特定字符来实现,默认使用两个连续的换行符(\\n\\n)作为拆分标志。`
         this.baseClasses = [this.type, ...getBaseClasses(CharacterTextSplitter)]
         this.inputs = [
             {
-                label: 'Separator',
+                label: '分隔符',
                 name: 'separator',
                 type: 'string',
                 optional: true
             },
             {
-                label: 'Chunk Size',
+                label: '块大小',
                 name: 'chunkSize',
                 type: 'number',
                 default: 1000,
                 optional: true
             },
             {
-                label: 'Chunk Overlap',
+                label: '块重叠',
                 name: 'chunkOverlap',
                 type: 'number',
                 optional: true

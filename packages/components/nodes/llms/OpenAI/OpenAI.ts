@@ -17,17 +17,17 @@ class OpenAI_LLMs implements INode {
         this.name = 'openAI'
         this.type = 'OpenAI'
         this.icon = 'openai.png'
-        this.category = 'LLMs'
-        this.description = 'Wrapper around OpenAI large language models'
+        this.category = '大型语言模型'
+        this.description = 'OpenAI大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [
             {
-                label: 'OpenAI Api Key',
+                label: 'OpenAI Api密钥',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -52,14 +52,14 @@ class OpenAI_LLMs implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 default: 0.7,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
@@ -80,35 +80,35 @@ class OpenAI_LLMs implements INode {
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Batch Size',
+                label: '批量大小',
                 name: 'batchSize',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'BasePath',
+                label: '基础路径',
                 name: 'basepath',
                 type: 'string',
                 optional: true,

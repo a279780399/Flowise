@@ -17,47 +17,47 @@ class SingleStoreUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'SingleStore Upsert Document'
+        this.label = 'SingleStore 向量更新插入'
         this.name = 'singlestoreUpsert'
         this.type = 'SingleStore'
         this.icon = 'singlestore.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to SingleStore'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到SingleStore的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Host',
+                label: '主机',
                 name: 'host',
                 type: 'string'
             },
             {
-                label: 'User',
+                label: '用户名',
                 name: 'user',
                 type: 'string'
             },
             {
-                label: 'Password',
+                label: '密码',
                 name: 'password',
                 type: 'password'
             },
             {
-                label: 'Database',
+                label: '数据库',
                 name: 'database',
                 type: 'string'
             },
             {
-                label: 'Table Name',
+                label: '表名称',
                 name: 'tableName',
                 type: 'string',
                 placeholder: 'embeddings',
@@ -65,7 +65,7 @@ class SingleStoreUpsert_VectorStores implements INode {
                 optional: true
             },
             {
-                label: 'Content Column Name',
+                label: '内容字段名称',
                 name: 'contentColumnName',
                 type: 'string',
                 placeholder: 'content',
@@ -73,7 +73,7 @@ class SingleStoreUpsert_VectorStores implements INode {
                 optional: true
             },
             {
-                label: 'Vector Column Name',
+                label: '向量字段名称',
                 name: 'vectorColumnName',
                 type: 'string',
                 placeholder: 'vector',
@@ -81,7 +81,7 @@ class SingleStoreUpsert_VectorStores implements INode {
                 optional: true
             },
             {
-                label: 'Metadata Column Name',
+                label: '元数据字段名称',
                 name: 'metadataColumnName',
                 type: 'string',
                 placeholder: 'metadata',
@@ -91,7 +91,7 @@ class SingleStoreUpsert_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                placeholder: '4',
+                placeholder: '获取前K个结果,K的默认值为4。',
                 type: 'number',
                 additionalParams: true,
                 optional: true
@@ -99,12 +99,12 @@ class SingleStoreUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'SingleStore Retriever',
+                label: 'SingleStore 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'SingleStore Vector Store',
+                label: 'SingleStore 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(SingleStoreVectorStore)]
             }

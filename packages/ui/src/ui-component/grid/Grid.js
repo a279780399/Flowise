@@ -13,7 +13,7 @@ export const Grid = ({ columns, rows, style, disabled = false, onRowUpdate, addN
         <>
             {!disabled && (
                 <Button variant='outlined' onClick={addNewRow} startIcon={<IconPlus />}>
-                    Add Item
+                    添加一项
                 </Button>
             )}
             {rows && columns && (

@@ -31,6 +31,8 @@ COPY packages/server/package.json ./packages/server/package.json
 
 RUN yarn install
 
+RUN chmod -R +x packages/server/bin
+
 # Copy app source
 COPY . .
 

@@ -29,9 +29,9 @@ COPY packages/ui/package.json ./packages/ui/package.json
 # Copy server package.json
 COPY packages/server/package.json ./packages/server/package.json
 
-RUN yarn install
+RUN chmod -R +x ./packages/server/bin
 
-RUN chmod -R +x packages/server/bin
+RUN yarn install
 
 # Copy app source
 COPY . .

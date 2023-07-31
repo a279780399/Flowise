@@ -13,42 +13,42 @@ class OpenAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAI Embeddings'
+        this.label = 'OpenAI 嵌入向量'
         this.name = 'openAIEmbeddings'
-        this.type = 'OpenAIEmbeddings'
+        this.type = 'OpenAI嵌入向量'
         this.icon = 'openai.png'
-        this.category = 'Embeddings'
-        this.description = 'OpenAI API to generate embeddings for a given text'
+        this.category = '嵌入向量'
+        this.description = 'OpenAI 提供了API接口,可以为给定的文本生成对应的嵌入向量。'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [
             {
-                label: 'OpenAI Api Key',
+                label: 'Api密钥',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Strip New Lines',
+                label: '去除换行符',
                 name: 'stripNewLines',
                 type: 'boolean',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Batch Size',
+                label: '批量大小',
                 name: 'batchSize',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'BasePath',
+                label: '基础路径',
                 name: 'basepath',
                 type: 'string',
                 optional: true,

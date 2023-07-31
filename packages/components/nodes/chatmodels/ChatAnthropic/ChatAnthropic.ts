@@ -17,8 +17,8 @@ class ChatAnthropic_ChatModels implements INode {
         this.name = 'chatAnthropic'
         this.type = 'ChatAnthropic'
         this.icon = 'chatAnthropic.png'
-        this.category = 'Chat Models'
-        this.description = 'Wrapper around ChatAnthropic large language models that use the Chat endpoint'
+        this.category = '对话模型'
+        this.description = '封装了ChatAnthropic的大型语言模型服务,通过Chat endpoint来使用这些模型进行聊天交互。'
         this.baseClasses = [this.type, ...getBaseClasses(ChatAnthropic)]
         this.inputs = [
             {
@@ -27,19 +27,19 @@ class ChatAnthropic_ChatModels implements INode {
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [
                     {
                         label: 'claude-2',
                         name: 'claude-2',
-                        description: 'Claude 2 latest major version, automatically get updates to the model as they are released'
+                        description: 'Claude 2最新主要版本，在发布时自动更新型号'
                     },
                     {
                         label: 'claude-instant-1',
                         name: 'claude-instant-1',
-                        description: 'Claude Instant latest major version, automatically get updates to the model as they are released'
+                        description: 'Claude Instant最新主要版本，在发布时自动获得模型更新'
                     },
                     {
                         label: 'claude-v1',
@@ -90,14 +90,14 @@ class ChatAnthropic_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokensToSample',
                 type: 'number',
                 optional: true,

@@ -13,28 +13,28 @@ class Text_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Text File'
+        this.label = 'Text文件'
         this.name = 'textFile'
         this.type = 'Document'
         this.icon = 'textFile.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from text files`
+        this.category = '文档加载器'
+        this.description = `从text文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Txt File',
+                label: 'Txt文件',
                 name: 'txtFile',
                 type: 'file',
                 fileType: '.txt'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

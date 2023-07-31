@@ -18,49 +18,49 @@ class SupabaseUpsert_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Supabase Upsert Document'
+        this.label = 'Supabase 向量更新插入'
         this.name = 'supabaseUpsert'
         this.type = 'Supabase'
         this.icon = 'supabase.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert documents to Supabase'
+        this.category = '向量存储'
+        this.description = '将文档向量上传并合并到Supabase的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Supabase API Key',
+                label: 'Supabase API密钥',
                 name: 'supabaseApiKey',
                 type: 'password'
             },
             {
-                label: 'Supabase Project URL',
+                label: 'Supabase URL',
                 name: 'supabaseProjUrl',
                 type: 'string'
             },
             {
-                label: 'Table Name',
+                label: '表名称',
                 name: 'tableName',
                 type: 'string'
             },
             {
-                label: 'Query Name',
+                label: '查询名称',
                 name: 'queryName',
                 type: 'string'
             },
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -69,12 +69,12 @@ class SupabaseUpsert_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Supabase Retriever',
+                label: 'Supabase 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Supabase Vector Store',
+                label: 'Supabase 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(SupabaseVectorStore)]
             }

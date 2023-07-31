@@ -118,17 +118,17 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
 
     const columns = useMemo(
         () => [
-            { field: 'property', headerName: 'Property', editable: true, flex: 1 },
+            { field: 'property', headerName: '属性', editable: true, flex: 1 },
             {
                 field: 'type',
-                headerName: 'Type',
+                headerName: '类型',
                 type: 'singleSelect',
                 valueOptions: ['string', 'number', 'boolean', 'date'],
                 editable: true,
                 width: 120
             },
-            { field: 'description', headerName: 'Description', editable: true, flex: 1 },
-            { field: 'required', headerName: 'Required', type: 'boolean', editable: true, width: 80 },
+            { field: 'description', headerName: '描述', editable: true, flex: 1 },
+            { field: 'required', headerName: '必须', type: 'boolean', editable: true, width: 80 },
             {
                 field: 'actions',
                 type: 'actions',
@@ -409,11 +409,11 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                 <Box sx={{ p: 2 }}>
                     <Stack sx={{ position: 'relative' }} direction='row'>
                         <Typography variant='overline'>
-                            Tool Name
+                            工具名称
                             <span style={{ color: 'red' }}>&nbsp;*</span>
                             <TooltipWithParser
                                 style={{ marginLeft: 10 }}
-                                title={'Tool name must be small capital letter with underscore. Ex: my_tool'}
+                                title={'自定义工具的命名需要符合小写字母加下划线的格式,例如my_tool就是一个符合要求的自定义工具名称。'}
                             />
                         </Typography>
                     </Stack>
@@ -422,7 +422,7 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                         type='string'
                         fullWidth
                         disabled={dialogProps.type === 'TEMPLATE'}
-                        placeholder='My New Tool'
+                        placeholder='新工具名称'
                         value={toolName}
                         name='toolName'
                         onChange={(e) => setToolName(e.target.value)}
@@ -431,7 +431,7 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                 <Box sx={{ p: 2 }}>
                     <Stack sx={{ position: 'relative' }} direction='row'>
                         <Typography variant='overline'>
-                            Tool description
+                            工具描述
                             <span style={{ color: 'red' }}>&nbsp;*</span>
                             <TooltipWithParser
                                 style={{ marginLeft: 10 }}
@@ -444,7 +444,7 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                         type='string'
                         fullWidth
                         disabled={dialogProps.type === 'TEMPLATE'}
-                        placeholder='Description of what the tool does. This is for ChatGPT to determine when to use this tool.'
+                        placeholder='需要提供对自定义工具功能的描述,这可以帮助ChatGPT判断在什么情况下可以使用这个自定义工具。'
                         multiline={true}
                         rows={3}
                         value={toolDesc}
@@ -454,7 +454,7 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                 </Box>
                 <Box sx={{ p: 2 }}>
                     <Stack sx={{ position: 'relative' }} direction='row'>
-                        <Typography variant='overline'>Tool Icon Src</Typography>
+                        <Typography variant='overline'>工具图标源</Typography>
                     </Stack>
                     <OutlinedInput
                         id='toolIcon'
@@ -470,8 +470,8 @@ const ToolDialog = ({ show, dialogProps, onUseTemplate, onCancel, onConfirm }) =
                 <Box sx={{ p: 2 }}>
                     <Stack sx={{ position: 'relative' }} direction='row'>
                         <Typography variant='overline'>
-                            Output Schema
-                            <TooltipWithParser style={{ marginLeft: 10 }} title={'What should be the output response in JSON format?'} />
+                            输出格式
+                            <TooltipWithParser style={{ marginLeft: 10 }} title={'输出响应应该是什么JSON格式'} />
                         </Typography>
                     </Stack>
                     <Grid

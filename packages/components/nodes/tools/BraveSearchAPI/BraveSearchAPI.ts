@@ -17,11 +17,11 @@ class BraveSearchAPI_Tools implements INode {
         this.name = 'braveSearchAPI'
         this.type = 'BraveSearchAPI'
         this.icon = 'brave.svg'
-        this.category = 'Tools'
-        this.description = 'Wrapper around BraveSearch API - a real-time API to access Brave search results'
+        this.category = '工具'
+        this.description = '这是一个封装了BraveSearch API的包装器,通过它可以实时访问BraveSearch引擎的搜索结果。'
         this.inputs = [
             {
-                label: 'BraveSearch API Key',
+                label: 'BraveSearch API密钥',
                 name: 'apiKey',
                 type: 'password'
             }

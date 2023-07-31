@@ -17,32 +17,32 @@ class Gitbook_DocumentLoaders implements INode {
         this.name = 'gitbook'
         this.type = 'Document'
         this.icon = 'gitbook.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from GitBook`
+        this.category = '文档加载器'
+        this.description = `加载GitBook数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Web Path',
+                label: 'Web路径',
                 name: 'webPath',
                 type: 'string',
                 placeholder: 'https://docs.gitbook.com/product-tour/navigation',
-                description: 'If want to load all paths from the GitBook provide only root path e.g.https://docs.gitbook.com/ '
+                description: '如果要加载GitBook中的所有路径,只需要提供根路径,例如:https://docs.gitbook.com/'
             },
             {
-                label: 'Should Load All Paths',
+                label: '加载所有路径',
                 name: 'shouldLoadAllPaths',
                 type: 'boolean',
-                description: 'Load from all paths in a given GitBook',
+                description: '从给定GitBook中的所有路径加载',
                 optional: true
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

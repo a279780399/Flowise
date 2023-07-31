@@ -18,32 +18,32 @@ class ConversationalAgent_Agents implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Conversational Agent'
+        this.label = 'Conversational'
         this.name = 'conversationalAgent'
-        this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.type = '代理执行器'
+        this.category = '代理'
         this.icon = 'agent.svg'
-        this.description = 'Conversational agent for a chat model. It will utilize chat specific prompts'
+        this.description = '针对聊天模型的会话式代理,它将利用特定的聊天提示进行交互。'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '可用工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Memory',
+                label: '存储器',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'System Message',
+                label: '系统提示',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,
@@ -51,7 +51,7 @@ class ConversationalAgent_Agents implements INode {
                 additionalParams: true
             },
             {
-                label: 'Human Message',
+                label: '用户消息',
                 name: 'humanMessage',
                 type: 'string',
                 rows: 4,

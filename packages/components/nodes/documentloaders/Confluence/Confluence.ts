@@ -17,24 +17,24 @@ class Confluence_DocumentLoaders implements INode {
         this.name = 'confluence'
         this.type = 'Document'
         this.icon = 'confluence.png'
-        this.category = 'Document Loaders'
-        this.description = `Load data from a Confluence Document`
+        this.category = '文档加载器'
+        this.description = `加载Confluence文档`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Username',
+                label: '用户名',
                 name: 'username',
                 type: 'string',
                 placeholder: '<CONFLUENCE_USERNAME>'
             },
             {
-                label: 'Access Token',
+                label: '访问令牌',
                 name: 'accessToken',
                 type: 'password',
                 placeholder: '<CONFLUENCE_ACCESS_TOKEN>'
@@ -46,20 +46,20 @@ class Confluence_DocumentLoaders implements INode {
                 placeholder: 'https://example.atlassian.net/wiki'
             },
             {
-                label: 'Space Key',
+                label: '空间标识',
                 name: 'spaceKey',
                 type: 'string',
                 placeholder: '~EXAMPLE362906de5d343d49dcdbae5dEXAMPLE'
             },
             {
-                label: 'Limit',
+                label: '最大链接数',
                 name: 'limit',
                 type: 'number',
                 default: 0,
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

@@ -12,32 +12,32 @@ class VectorStoreRetriever_Retrievers implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Vector Store Retriever'
+        this.label = '向量存储检索器'
         this.name = 'vectorStoreRetriever'
-        this.type = 'VectorStoreRetriever'
+        this.type = '向量存储检索器'
         this.icon = 'vectorretriever.svg'
-        this.category = 'Retrievers'
-        this.description = 'Store vector store as retriever to be later queried by MultiRetrievalQAChain'
+        this.category = '检索器'
+        this.description = '将向量存储模型存储为一个检索器,这样后续多提示链系统就可以查询使用这个检索器。'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Vector Store',
+                label: '向量存储',
                 name: 'vectorStore',
                 type: 'VectorStore'
             },
             {
-                label: 'Retriever Name',
+                label: '检索器名称',
                 name: 'name',
                 type: 'string',
-                placeholder: 'netflix movies'
+                placeholder: 'netflix电影'
             },
             {
-                label: 'Retriever Description',
+                label: '检索器描述',
                 name: 'description',
                 type: 'string',
                 rows: 3,
-                description: 'Description of when to use the vector store retriever',
-                placeholder: 'Good for answering questions about netflix movies'
+                description: '描述这个提示的作用,以及在什么情况下应该使用这个提示。',
+                placeholder: '请提供任何Netflix电影相关的问题,会尽力回答。'
             }
         ]
     }

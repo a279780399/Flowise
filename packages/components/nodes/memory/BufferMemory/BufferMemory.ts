@@ -13,22 +13,22 @@ class BufferMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Buffer Memory'
+        this.label = '缓冲存储器'
         this.name = 'bufferMemory'
         this.type = 'BufferMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
-        this.description = 'Remembers previous conversational back and forths directly'
+        this.category = '存储器'
+        this.description = '保存之前的对话内容和上下文,从而更好地进行回应。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'
             },
             {
-                label: 'Input Key',
+                label: '输入关键字',
                 name: 'inputKey',
                 type: 'string',
                 default: 'input'

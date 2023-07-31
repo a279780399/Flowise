@@ -59,7 +59,7 @@ export const AsyncDropdown = ({
     const [loading, setLoading] = useState(false)
     const findMatchingOptions = (options = [], value) => options.find((option) => option.name === value)
     const getDefaultOptionValue = () => ''
-    const addNewOption = [{ label: '- Create New -', name: '-create-' }]
+    const addNewOption = [{ label: '- 新建 -', name: '-create-' }]
     let [internalValue, setInternalValue] = useState(value ?? 'choose an option')
 
     useEffect(() => {

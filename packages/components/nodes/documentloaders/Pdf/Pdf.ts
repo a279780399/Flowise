@@ -13,51 +13,51 @@ class Pdf_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Pdf File'
+        this.label = 'Pdf文件'
         this.name = 'pdfFile'
         this.type = 'Document'
         this.icon = 'pdf.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from PDF files`
+        this.category = '文档加载器'
+        this.description = `从PDF文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Pdf File',
+                label: 'Pdf文件',
                 name: 'pdfFile',
                 type: 'file',
                 fileType: '.pdf'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Usage',
+                label: '使用方法',
                 name: 'usage',
                 type: 'options',
                 options: [
                     {
-                        label: 'One document per page',
+                        label: '每页一个文档',
                         name: 'perPage'
                     },
                     {
-                        label: 'One document per file',
+                        label: '每个文件一个文档',
                         name: 'perFile'
                     }
                 ],
                 default: 'perPage'
             },
             {
-                label: 'Use Legacy Build',
+                label: '使用旧版构建',
                 name: 'legacyBuild',
                 type: 'boolean',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

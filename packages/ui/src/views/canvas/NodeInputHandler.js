@@ -93,10 +93,10 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
     const editAsyncOption = (inputParamName, inputValue) => {
         if (inputParamName === 'selectedTool') {
             setAsyncOptionEditDialogProps({
-                title: 'Edit Tool',
+                title: '编辑工具',
                 type: 'EDIT',
-                cancelButtonName: 'Cancel',
-                confirmButtonName: 'Save',
+                cancelButtonName: '取消',
+                confirmButtonName: '保存',
                 toolId: inputValue
             })
         }
@@ -106,10 +106,10 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
     const addAsyncOption = (inputParamName) => {
         if (inputParamName === 'selectedTool') {
             setAsyncOptionEditDialogProps({
-                title: 'Add New Tool',
+                title: '添加新工具',
                 type: 'ADD',
-                cancelButtonName: 'Cancel',
-                confirmButtonName: 'Add'
+                cancelButtonName: '取消',
+                confirmButtonName: '添加'
             })
         }
         setAsyncOptionEditDialog(inputParamName)
@@ -271,7 +271,7 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                                             variant='outlined'
                                             onClick={() => onFormatPromptValuesClicked(data.inputs[inputParam.name] ?? '', inputParam)}
                                         >
-                                            Format Prompt Values
+                                            格式化提示语
                                         </Button>
                                         <FormatPromptValuesDialog
                                             show={showFormatPromptValuesDialog}

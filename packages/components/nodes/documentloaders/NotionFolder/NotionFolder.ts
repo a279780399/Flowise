@@ -13,29 +13,29 @@ class NotionFolder_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Notion Folder'
+        this.label = 'Notion文件夹'
         this.name = 'notionFolder'
         this.type = 'Document'
         this.icon = 'notion.png'
-        this.category = 'Document Loaders'
-        this.description = 'Load data from the exported and unzipped Notion folder'
+        this.category = '文档加载器'
+        this.description = '从导出并解压的Notion文件夹中加载数据'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Notion Folder',
+                label: 'Notion文件夹',
                 name: 'notionFolder',
                 type: 'string',
-                description: 'Get folder path',
-                placeholder: 'Paste folder path'
+                description: 'Notion文件夹',
+                placeholder: '输入文件夹'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

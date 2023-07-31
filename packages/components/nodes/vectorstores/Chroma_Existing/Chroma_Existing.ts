@@ -15,21 +15,21 @@ class Chroma_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Chroma Load Existing Index'
+        this.label = 'Chroma 向量加载器'
         this.name = 'chromaExistingIndex'
         this.type = 'Chroma'
         this.icon = 'chroma.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Chroma (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从Chroma向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Collection Name',
+                label: '集合名称',
                 name: 'collectionName',
                 type: 'string'
             },
@@ -42,7 +42,7 @@ class Chroma_Existing_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -51,12 +51,12 @@ class Chroma_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Chroma Retriever',
+                label: 'Chroma 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Chroma Vector Store',
+                label: 'Chroma 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(Chroma)]
             }

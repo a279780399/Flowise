@@ -82,7 +82,7 @@ const getConfigExamplesForJS = (configData, bodyType) => {
         else if (config.type === 'number') exampleVal = `1`
         else if (config.name === 'files') exampleVal = `input.files[0]`
         finalStr += bodyType === 'json' ? `\n      "${config.name}": ${exampleVal},` : `formData.append("${config.name}", ${exampleVal})\n`
-        if (i === loop - 1 && bodyType !== 'json') `formData.append("question", "Hey, how are you?")\n`
+        if (i === loop - 1 && bodyType !== 'json') `formData.append("question", "嗨, 你好吗?")\n`
     }
     return finalStr
 }
@@ -99,7 +99,7 @@ const getConfigExamplesForPython = (configData, bodyType) => {
         else if (config.type === 'number') exampleVal = `1`
         else if (config.name === 'files') exampleVal = `('example${config.type}', open('example${config.type}', 'rb'))`
         finalStr += bodyType === 'json' ? `\n        "${config.name}": ${exampleVal},` : `\n    "${config.name}": ${exampleVal},`
-        if (i === loop - 1 && bodyType !== 'json') finalStr += `\n    "question": "Hey, how are you?"\n`
+        if (i === loop - 1 && bodyType !== 'json') finalStr += `\n    "question": "嗨, 你好吗?"\n`
     }
     return finalStr
 }
@@ -127,7 +127,7 @@ const APICodeDialog = ({ show, dialogProps, onCancel }) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const codes = ['Embed', 'Python', 'JavaScript', 'cURL', 'Share Chatbot']
+    const codes = ['嵌入', 'Python', 'JavaScript', 'cURL', '分享聊天机器人']
     const [value, setValue] = useState(0)
     const [keyOptions, setKeyOptions] = useState([])
     const [apiKeys, setAPIKeys] = useState([])
@@ -181,7 +181,7 @@ def query(payload):
     return response.json()
     
 output = query({
-    "question": "Hey, how are you?",
+    "question": "嗨, 你好吗?",
 })
 `
         } else if (codeLang === 'JavaScript') {
@@ -200,14 +200,14 @@ output = query({
     return result;
 }
 
-query({"question": "Hey, how are you?"}).then((response) => {
+query({"question": "嗨, 你好吗?"}).then((response) => {
     console.log(response);
 });
 `
         } else if (codeLang === 'cURL') {
             return `curl ${baseURL}/api/v1/prediction/${dialogProps.chatflowid} \\
      -X POST \\
-     -d '{"question": "Hey, how are you?"}' \\
+     -d '{"question": "嗨, 你好吗?"}' \\
      -H "Content-Type: application/json"`
         }
         return ''
@@ -225,7 +225,7 @@ def query(payload):
     return response.json()
     
 output = query({
-    "question": "Hey, how are you?",
+    "question": "嗨, 你好吗?",
 })
 `
         } else if (codeLang === 'JavaScript') {
@@ -245,14 +245,14 @@ output = query({
     return result;
 }
 
-query({"question": "Hey, how are you?"}).then((response) => {
+query({"question": "嗨, 你好吗?"}).then((response) => {
     console.log(response);
 });
 `
         } else if (codeLang === 'cURL') {
             return `curl ${baseURL}/api/v1/prediction/${dialogProps.chatflowid} \\
      -X POST \\
-     -d '{"question": "Hey, how are you?"}' \\
+     -d '{"question": "嗨, 你好吗?"}' \\
      -H "Content-Type: application/json" \\
      -H "Authorization: Bearer ${selectedApiKey?.apiKey}"`
         }
@@ -275,11 +275,11 @@ query({"question": "Hey, how are you?"}).then((response) => {
             return pythonSVG
         } else if (codeLang === 'JavaScript') {
             return javascriptSVG
-        } else if (codeLang === 'Embed') {
+        } else if (codeLang === '嵌入') {
             return EmbedSVG
         } else if (codeLang === 'cURL') {
             return cURLSVG
-        } else if (codeLang === 'Share Chatbot') {
+        } else if (codeLang === '分享聊天机器人') {
             return ShareChatbotSVG
         }
         return pythonSVG
@@ -391,7 +391,7 @@ def query(payload):
     return response.json()
 
 output = query({
-    "question": "Hey, how are you?",
+    "question": "嗨, 你好吗?",
     "overrideConfig": {${getConfigExamplesForPython(configData, 'json')}
     }
 })
@@ -413,7 +413,7 @@ output = query({
 }
 
 query({
-  "question": "Hey, how are you?",
+  "question": "嗨, 你好吗?",
   "overrideConfig": {${getConfigExamplesForJS(configData, 'json')}
   }
 }).then((response) => {
@@ -423,7 +423,7 @@ query({
         } else if (codeLang === 'cURL') {
             return `curl ${baseURL}/api/v1/prediction/${dialogProps.chatflowid} \\
      -X POST \\
-     -d '{"question": "Hey, how are you?", "overrideConfig": {${getConfigExamplesForCurl(configData, 'json')}}' \\
+     -d '{"question": "Hey, 你好吗?", "overrideConfig": {${getConfigExamplesForCurl(configData, 'json')}}' \\
      -H "Content-Type: application/json"`
         }
         return ''
@@ -443,7 +443,7 @@ def query(payload):
     return response.json()
 
 output = query({
-    "question": "Hey, how are you?",
+    "question": "嗨, 你好吗?",
     "overrideConfig": {${getConfigExamplesForPython(configData, 'json')}
     }
 })
@@ -466,7 +466,7 @@ output = query({
 }
 
 query({
-  "question": "Hey, how are you?",
+  "question": "嗨, 你好吗?",
   "overrideConfig": {${getConfigExamplesForJS(configData, 'json')}
   }
 }).then((response) => {
@@ -476,7 +476,7 @@ query({
         } else if (codeLang === 'cURL') {
             return `curl ${baseURL}/api/v1/prediction/${dialogProps.chatflowid} \\
      -X POST \\
-     -d '{"question": "Hey, how are you?", "overrideConfig": {${getConfigExamplesForCurl(configData, 'json')}}' \\
+     -d '{"question": "嗨, 你好吗?", "overrideConfig": {${getConfigExamplesForCurl(configData, 'json')}}' \\
      -H "Content-Type: application/json" \\
      -H "Authorization: Bearer ${selectedApiKey?.apiKey}"`
         }
@@ -487,7 +487,7 @@ query({
         if (getAllAPIKeysApi.data) {
             const options = [
                 {
-                    label: 'No Authorization',
+                    label: '无权限',
                     name: ''
                 }
             ]
@@ -498,7 +498,7 @@ query({
                 })
             }
             options.push({
-                label: '- Add New Key -',
+                label: '添加新密钥',
                 name: 'addnewkey'
             })
             setKeyOptions(options)
@@ -562,16 +562,16 @@ query({
                 <div style={{ marginTop: 10 }}></div>
                 {codes.map((codeLang, index) => (
                     <TabPanel key={index} value={value} index={index}>
-                        {(codeLang === 'Embed' || codeLang === 'Share Chatbot') && chatflowApiKeyId && (
+                        {(codeLang === '嵌入' || codeLang === '分享聊天机器人') && chatflowApiKeyId && (
                             <>
-                                <p>You cannot use API key while embedding/sharing chatbot.</p>
+                                <p>嵌入/共享聊天机器人时,您无法使用 API 密钥。</p>
                                 <p>
-                                    Please select <b>&quot;No Authorization&quot;</b> from the dropdown at the top right corner.
+                                    请从右上角下拉菜单中选择<b>&quot;无权限&quot;</b>。
                                 </p>
                             </>
                         )}
-                        {codeLang === 'Embed' && !chatflowApiKeyId && <EmbedChat chatflowid={dialogProps.chatflowid} />}
-                        {codeLang !== 'Embed' && codeLang !== 'Share Chatbot' && (
+                        {codeLang === '嵌入' && !chatflowApiKeyId && <EmbedChat chatflowid={dialogProps.chatflowid} />}
+                        {codeLang !== '嵌入' && codeLang !== '分享聊天机器人' && (
                             <>
                                 <CopyBlock
                                     theme={atomOneDark}
@@ -580,7 +580,7 @@ query({
                                     showLineNumbers={false}
                                     wrapLines
                                 />
-                                <CheckboxInput label='Show Input Config' value={checkboxVal} onChange={onCheckBoxChanged} />
+                                <CheckboxInput label='显示输入配置' value={checkboxVal} onChange={onCheckBoxChanged} />
                                 {checkboxVal && getConfigApi.data && getConfigApi.data.length > 0 && (
                                     <>
                                         <TableViewOnly rows={getConfigApi.data} columns={Object.keys(getConfigApi.data[0])} />
@@ -612,7 +612,7 @@ query({
                                 )}
                             </>
                         )}
-                        {codeLang === 'Share Chatbot' && !chatflowApiKeyId && <ShareChatbot />}
+                        {codeLang === '分享聊天机器人' && !chatflowApiKeyId && <ShareChatbot />}
                     </TabPanel>
                 ))}
             </DialogContent>

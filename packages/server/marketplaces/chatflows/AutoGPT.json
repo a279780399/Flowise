@@ -522,7 +522,7 @@
                     {
                         "label": "Top K",
                         "name": "topK",
-                        "description": "Number of top results to fetch. Default to 4",
+                        "description": "获取前K个结果,K的默认值为4。",
                         "placeholder": "4",
                         "type": "number",
                         "additionalParams": true,

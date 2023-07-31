@@ -14,12 +14,12 @@ class MotorMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Motorhead Memory'
+        this.label = 'Motorhead存储器'
         this.name = 'motorheadMemory'
         this.type = 'MotorheadMemory'
         this.icon = 'motorhead.png'
-        this.category = 'Memory'
-        this.description = 'Remembers previous conversational back and forths directly'
+        this.category = '存储器'
+        this.description = '保存之前的对话内容和上下文,从而更好地进行回应。'
         this.baseClasses = [this.type, ...getBaseClasses(MotorheadMemory)]
         this.inputs = [
             {
@@ -27,36 +27,36 @@ class MotorMemory_Memory implements INode {
                 name: 'baseURL',
                 type: 'string',
                 optional: true,
-                description: 'To use the online version, leave the URL blank. More details at https://getmetal.io.'
+                description: '要使用在线版本,请将URL留空。更多详情请见https://getmetal.io。'
             },
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'
             },
             {
-                label: 'Session Id',
+                label: '会话id',
                 name: 'sessionId',
                 type: 'string',
-                description: 'if empty, chatId will be used automatically',
+                description: '如果为空,将自动使用chatId',
                 default: '',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'API Key',
+                label: 'API密钥',
                 name: 'apiKey',
                 type: 'password',
-                description: 'Only needed when using hosted solution - https://getmetal.io',
+                description: '仅当使用托管解决方案时需要 - https://getmetal.io',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Client ID',
+                label: '客户端id',
                 name: 'clientId',
                 type: 'string',
-                description: 'Only needed when using hosted solution - https://getmetal.io',
+                description: '仅当使用托管解决方案时需要 - https://getmetal.io',
                 additionalParams: true,
                 optional: true
             }

@@ -15,12 +15,12 @@ class Puppeteer_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Puppeteer Web Scraper'
+        this.label = 'Puppeteer 网页抓取器'
         this.name = 'puppeteerWebScraper'
         this.type = 'Document'
         this.icon = 'puppeteer.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from webpages`
+        this.category = '文档加载器'
+        this.description = `加载网页数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
@@ -29,43 +29,42 @@ class Puppeteer_DocumentLoaders implements INode {
                 type: 'string'
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Get Relative Links Method',
+                label: '获取相对链接方法',
                 name: 'relativeLinksMethod',
                 type: 'options',
-                description: 'Select a method to retrieve relative links',
+                description: '从HTML中获取相对链接的方法',
                 options: [
                     {
-                        label: 'Web Crawl',
+                        label: '网络爬虫',
                         name: 'webCrawl',
-                        description: 'Crawl relative links from HTML URL'
+                        description: '从HTML URL爬取相对链接的方法'
                     },
                     {
-                        label: 'Scrape XML Sitemap',
+                        label: '抓取XML Sitemap',
                         name: 'scrapeXMLSitemap',
-                        description: 'Scrape relative links from XML sitemap URL'
+                        description: '从XML Sitemap URL爬取相对链接的方法'
                     }
                 ],
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Get Relative Links Limit',
+                label: '获取相对链接限制',
                 name: 'limit',
                 type: 'number',
                 optional: true,
                 additionalParams: true,
-                description:
-                    'Only used when "Get Relative Links Method" is selected. Set 0 to retrieve all relative links, default limit is 10.',
-                warning: `Retreiving all links might take long time, and all links will be upserted again if the flow's state changed (eg: different URL, chunk size, etc)`
+                description: '只在选择了“获取相对链接方法”时使用。设置为0可以获取所有相对链接,默认限制是10。',
+                warning: `获取所有链接可能需要很长时间,而且如果流的状态发生变化(例如不同的URL、分块大小等),所有链接将会再次被插入。`
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

@@ -18,28 +18,28 @@ class Folder_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Folder with Files'
+        this.label = '文件夹加载器'
         this.name = 'folderFiles'
         this.type = 'Document'
         this.icon = 'folder.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from folder with multiple files`
+        this.category = '文档加载器'
+        this.description = `从包含多个文件的文件夹中加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Folder Path',
+                label: '文件夹路径',
                 name: 'folderPath',
                 type: 'string',
                 placeholder: ''
             },
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

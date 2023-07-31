@@ -13,38 +13,38 @@ class DynamoDb_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'DynamoDB Chat Memory'
+        this.label = 'DynamoDB存储器'
         this.name = 'DynamoDBChatMemory'
         this.type = 'DynamoDBChatMemory'
         this.icon = 'dynamodb.svg'
-        this.category = 'Memory'
-        this.description = 'Stores the conversation in dynamo db table'
+        this.category = '存储器'
+        this.description = '将对话内容存储在DynamoDB的数据库表中。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [
             {
-                label: 'Table Name',
+                label: '表名称',
                 name: 'tableName',
                 type: 'string'
             },
             {
-                label: 'Partition Key',
+                label: '分区键',
                 name: 'partitionKey',
                 type: 'string'
             },
             {
-                label: 'Session ID',
+                label: '会话id',
                 name: 'sessionId',
                 type: 'string',
-                description: 'if empty, chatId will be used automatically',
+                description: '如果为空,将自动使用chatId',
                 default: '',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Region',
+                label: '区域',
                 name: 'region',
                 type: 'string',
-                description: 'The aws region in which table is located',
+                description: '表所在的aws区域',
                 placeholder: 'us-east-1'
             },
             {
@@ -58,7 +58,7 @@ class DynamoDb_Memory implements INode {
                 type: 'password'
             },
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'

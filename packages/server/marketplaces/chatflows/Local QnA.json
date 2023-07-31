@@ -16,7 +16,7 @@
                 "name": "recursiveCharacterTextSplitter",
                 "type": "RecursiveCharacterTextSplitter",
                 "baseClasses": ["RecursiveCharacterTextSplitter", "TextSplitter"],
-                "category": "Text Splitters",
+                "category": "文本切分器",
                 "description": "Split documents recursively by different characters - starting with \"\n\n\", then \"\n\", then \" \"",
                 "inputParams": [
                     {
@@ -192,7 +192,7 @@
                     {
                         "label": "Top K",
                         "name": "topK",
-                        "description": "Number of top results to fetch. Default to 4",
+                        "description": "获取前K个结果,K的默认值为4。",
                         "placeholder": "4",
                         "type": "number",
                         "additionalParams": true,

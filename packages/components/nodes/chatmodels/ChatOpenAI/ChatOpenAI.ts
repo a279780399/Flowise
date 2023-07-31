@@ -17,17 +17,17 @@ class ChatOpenAI_ChatModels implements INode {
         this.name = 'chatOpenAI'
         this.type = 'ChatOpenAI'
         this.icon = 'openai.png'
-        this.category = 'Chat Models'
-        this.description = 'Wrapper around OpenAI large language models that use the Chat endpoint'
+        this.category = '对话模型'
+        this.description = '使用聊天端点的OpenAI大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [
             {
-                label: 'OpenAI Api Key',
+                label: 'OpenAI Api密钥',
                 name: 'openAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -68,14 +68,14 @@ class ChatOpenAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
@@ -89,21 +89,21 @@ class ChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

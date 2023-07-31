@@ -13,31 +13,31 @@ class HuggingFaceInferenceEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'HuggingFace Inference Embeddings'
+        this.label = 'HuggingFace 嵌入向量'
         this.name = 'huggingFaceInferenceEmbeddings'
-        this.type = 'HuggingFaceInferenceEmbeddings'
+        this.type = 'HuggingFace嵌入向量'
         this.icon = 'huggingface.png'
-        this.category = 'Embeddings'
-        this.description = 'HuggingFace Inference API to generate embeddings for a given text'
+        this.category = '嵌入向量'
+        this.description = 'HuggingFace 提供了API接口,可以为给定的文本生成对应的嵌入向量。'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInferenceEmbeddings)]
         this.inputs = [
             {
-                label: 'HuggingFace Api Key',
+                label: 'Api密钥',
                 name: 'apiKey',
                 type: 'password'
             },
             {
-                label: 'Model',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'string',
                 optional: true
             },
             {
-                label: 'Endpoint',
+                label: '端点',
                 name: 'endpoint',
                 type: 'string',
                 placeholder: 'https://xyz.eu-west-1.aws.endpoints.huggingface.cloud/sentence-transformers/all-MiniLM-L6-v2',
-                description: 'Using your own inference endpoint',
+                description: '使用自定义的推理端点',
                 optional: true
             }
         ]

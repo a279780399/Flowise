@@ -16,12 +16,12 @@ class RedisBackedChatMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Redis-Backed Chat Memory'
+        this.label = 'Redis存储器'
         this.name = 'RedisBackedChatMemory'
         this.type = 'RedisBackedChatMemory'
         this.icon = 'redis.svg'
-        this.category = 'Memory'
-        this.description = 'Summarizes the conversation and stores the memory in Redis server'
+        this.category = '存储器'
+        this.description = '总结对话内容,并将生成的记忆存储在Redis服务器中。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [
             {
@@ -31,23 +31,23 @@ class RedisBackedChatMemory_Memory implements INode {
                 default: 'redis://localhost:6379'
             },
             {
-                label: 'Session Id',
+                label: '会话id',
                 name: 'sessionId',
                 type: 'string',
-                description: 'if empty, chatId will be used automatically',
+                description: '如果为空,将自动使用chatId',
                 default: '',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Session Timeouts',
+                label: '会话过期时间',
                 name: 'sessionTTL',
                 type: 'number',
-                description: 'Omit this parameter to make sessions never expire',
+                description: '如果不指定这个参数,那么会话就永远不会过期。',
                 optional: true
             },
             {
-                label: 'Memory Key',
+                label: '存储键名',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history'

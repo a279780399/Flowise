@@ -13,21 +13,21 @@ class AzureOpenAI_LLMs implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure OpenAI'
+        this.label = 'Azure'
         this.name = 'azureOpenAI'
         this.type = 'AzureOpenAI'
         this.icon = 'Azure.svg'
-        this.category = 'LLMs'
-        this.description = 'Wrapper around Azure OpenAI large language models'
+        this.category = '大型语言模型'
+        this.description = 'Azure大语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Azure Api密钥',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'options',
                 options: [
@@ -84,26 +84,26 @@ class AzureOpenAI_LLMs implements INode {
                 optional: true
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Azure Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Azure Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Azure Api版本',
                 name: 'azureOpenAIApiVersion',
                 type: 'string',
                 placeholder: '2023-06-01-preview',
@@ -111,14 +111,14 @@ class AzureOpenAI_LLMs implements INode {
                     'Description of Supported API Versions. Please refer <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions">examples</a>'
             },
             {
-                label: 'Max Tokens',
+                label: '最大Token数',
                 name: 'maxTokens',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: 'Top_P',
                 name: 'topP',
                 type: 'number',
                 optional: true,
@@ -132,21 +132,21 @@ class AzureOpenAI_LLMs implements INode {
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率惩罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '存在惩罚',
                 name: 'presencePenalty',
                 type: 'number',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

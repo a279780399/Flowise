@@ -38,7 +38,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
     const [loading, setLoading] = useState(false)
     const [messages, setMessages] = useState([
         {
-            message: 'Hi there! How can I help?',
+            message: '嗨,您好!我能为您提供什么帮助吗?',
             type: 'apiMessage'
         }
     ])
@@ -125,7 +125,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
         try {
             const params = {
                 question: userInput,
-                history: messages.filter((msg) => msg.message !== 'Hi there! How can I help?')
+                history: messages.filter((msg) => msg.message !== '嗨,您好!我能为您提供什么帮助吗?')
             }
             if (isChatFlowAvailableToStream) params.socketIOClientId = socketIOClientId
 
@@ -241,7 +241,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
             setLoading(false)
             setMessages([
                 {
-                    message: 'Hi there! How can I help?',
+                    message: '嗨,您好!我能为您提供什么帮助吗?',
                     type: 'apiMessage'
                 }
             ])

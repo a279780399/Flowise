@@ -22,34 +22,34 @@ class ConversationChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Conversation Chain'
+        this.label = '会话链'
         this.name = 'conversationChain'
         this.type = 'ConversationChain'
         this.icon = 'chain.svg'
-        this.category = 'Chains'
-        this.description = 'Chat models specific conversational chain with memory'
+        this.category = '链'
+        this.description = '具有记忆能力的专门针对聊天的会话链'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Memory',
+                label: '存储器',
                 name: 'memory',
                 type: 'BaseMemory'
             },
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
-                description: 'Include whole document into the context window',
+                description: '将整个文档包含在上下文窗口中',
                 optional: true,
                 list: true
             },
             {
-                label: 'System Message',
+                label: '系统提示',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,

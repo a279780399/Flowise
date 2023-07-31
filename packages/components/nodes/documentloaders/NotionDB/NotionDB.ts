@@ -13,42 +13,41 @@ class NotionDB_DocumentLoaders implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Notion Database'
+        this.label = 'Notion数据库'
         this.name = 'notionDB'
         this.type = 'Document'
         this.icon = 'notion.png'
-        this.category = 'Document Loaders'
-        this.description = 'Load data from Notion Database ID'
+        this.category = '文档加载器'
+        this.description = '从Notion数据库ID加载数据'
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Text Splitter',
+                label: '文本切分器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Notion Database Id',
+                label: 'Notion数据库Id',
                 name: 'databaseId',
                 type: 'string',
-                description:
-                    'If your URL looks like - https://www.notion.so/<long_hash_1>?v=<long_hash_2>, then <long_hash_1> is the database ID'
+                description: '如果你的URL看起来像这样： - https://www.notion.so/<long_hash_1>?v=<long_hash_2>, <long_hash_1> 是数据库ID'
             },
             {
-                label: 'Notion Integration Token',
+                label: 'Notion集成令牌',
                 name: 'notionIntegrationToken',
                 type: 'password',
                 description:
-                    'You can find integration token <a target="_blank" href="https://developers.notion.com/docs/create-a-notion-integration#step-1-create-an-integration">here</a>'
+                    '您可以在这里找到集成令牌 <a target="_blank" href="https://developers.notion.com/docs/create-a-notion-integration#step-1-create-an-integration"></a>'
             },
             {
-                label: 'Page Size Limit',
+                label: '页面大小限制',
                 name: 'pageSizeLimit',
                 type: 'number',
                 default: 10
             },
             {
-                label: 'Metadata',
+                label: '元数据',
                 name: 'metadata',
                 type: 'json',
                 optional: true,

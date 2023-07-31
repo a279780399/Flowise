@@ -17,12 +17,12 @@ class AIPlugin implements INode {
         this.name = 'aiPlugin'
         this.type = 'AIPlugin'
         this.icon = 'aiplugin.svg'
-        this.category = 'Tools'
-        this.description = 'Execute actions using ChatGPT Plugin Url'
+        this.category = '工具'
+        this.description = '使用ChatGPT插件URL来执行操作'
         this.baseClasses = [this.type, ...getBaseClasses(AIPluginTool)]
         this.inputs = [
             {
-                label: 'Plugin Url',
+                label: '插件Url',
                 name: 'pluginUrl',
                 type: 'string',
                 placeholder: 'https://www.klarna.com/.well-known/ai-plugin.json'

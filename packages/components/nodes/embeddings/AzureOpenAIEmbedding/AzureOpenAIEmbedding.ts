@@ -14,33 +14,33 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure OpenAI Embeddings'
+        this.label = 'Azure 嵌入向量'
         this.name = 'azureOpenAIEmbeddings'
-        this.type = 'AzureOpenAIEmbeddings'
+        this.type = 'Azure嵌入向量'
         this.icon = 'Azure.svg'
-        this.category = 'Embeddings'
-        this.description = 'Azure OpenAI API to generate embeddings for a given text'
+        this.category = '嵌入向量'
+        this.description = 'Azure OpenAI 提供了API接口,可以为给定的文本生成对应的嵌入向量。'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [
             {
-                label: 'Azure OpenAI Api Key',
+                label: 'Api密钥',
                 name: 'azureOpenAIApiKey',
                 type: 'password'
             },
             {
-                label: 'Azure OpenAI Api Instance Name',
+                label: 'Api实例名称',
                 name: 'azureOpenAIApiInstanceName',
                 type: 'string',
                 placeholder: 'YOUR-INSTANCE-NAME'
             },
             {
-                label: 'Azure OpenAI Api Deployment Name',
+                label: 'Api部署名称',
                 name: 'azureOpenAIApiDeploymentName',
                 type: 'string',
                 placeholder: 'YOUR-DEPLOYMENT-NAME'
             },
             {
-                label: 'Azure OpenAI Api Version',
+                label: 'Api版本号',
                 name: 'azureOpenAIApiVersion',
                 type: 'string',
                 placeholder: '2023-03-15-preview',
@@ -48,7 +48,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
                     'Description of Supported API Versions. Please refer <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#embeddings">examples</a>'
             },
             {
-                label: 'Batch Size',
+                label: '批量大小',
                 name: 'batchSize',
                 type: 'number',
                 default: '1',
@@ -56,7 +56,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时时间',
                 name: 'timeout',
                 type: 'number',
                 optional: true,

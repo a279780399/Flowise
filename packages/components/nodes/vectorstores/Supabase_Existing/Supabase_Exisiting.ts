@@ -16,41 +16,41 @@ class Supabase_Existing_VectorStores implements INode {
     outputs: INodeOutputsValue[]
 
     constructor() {
-        this.label = 'Supabase Load Existing Index'
+        this.label = 'Supabase 向量加载器'
         this.name = 'supabaseExistingIndex'
         this.type = 'Supabase'
         this.icon = 'supabase.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Load existing index from Supabase (i.e: Document has been upserted)'
+        this.category = '向量存储'
+        this.description = '从Supabase向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [
             {
-                label: 'Embeddings',
+                label: '嵌入向量',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Supabase API Key',
+                label: 'Supabase API密钥',
                 name: 'supabaseApiKey',
                 type: 'password'
             },
             {
-                label: 'Supabase Project URL',
+                label: 'Supabase URL',
                 name: 'supabaseProjUrl',
                 type: 'string'
             },
             {
-                label: 'Table Name',
+                label: '表名称',
                 name: 'tableName',
                 type: 'string'
             },
             {
-                label: 'Query Name',
+                label: '查询名称',
                 name: 'queryName',
                 type: 'string'
             },
             {
-                label: 'Supabase Metadata Filter',
+                label: 'Supabase元数据过滤',
                 name: 'supabaseMetadataFilter',
                 type: 'json',
                 optional: true,
@@ -59,7 +59,7 @@ class Supabase_Existing_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '获取前K个结果,K的默认值为4。',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -68,12 +68,12 @@ class Supabase_Existing_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Supabase Retriever',
+                label: 'Supabase 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Supabase Vector Store',
+                label: 'Supabase 向量存储',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(SupabaseVectorStore)]
             }

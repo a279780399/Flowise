@@ -14,23 +14,23 @@ class HtmlToMarkdownTextSplitter_TextSplitters implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'HtmlToMarkdown Text Splitter'
+        this.label = 'HtmlToMarkdown 文本切分器'
         this.name = 'htmlToMarkdownTextSplitter'
-        this.type = 'HtmlToMarkdownTextSplitter'
+        this.type = 'HtmlToMarkdown 文本切分器'
         this.icon = 'htmlToMarkdownTextSplitter.svg'
-        this.category = 'Text Splitters'
-        this.description = `Converts Html to Markdown and then split your content into documents based on the Markdown headers`
+        this.category = '文本切分器'
+        this.description = `将Html格式转换为Markdown格式,然后根据Markdown中的标题拆分内容成多个文档。`
         this.baseClasses = [this.type, ...getBaseClasses(HtmlToMarkdownTextSplitter)]
         this.inputs = [
             {
-                label: 'Chunk Size',
+                label: '块大小',
                 name: 'chunkSize',
                 type: 'number',
                 default: 1000,
                 optional: true
             },
             {
-                label: 'Chunk Overlap',
+                label: '块重叠',
                 name: 'chunkOverlap',
                 type: 'number',
                 optional: true

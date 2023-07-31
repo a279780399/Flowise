@@ -47,7 +47,7 @@ const AddNodes = ({ nodesData, node }) => {
 
     const [searchValue, setSearchValue] = useState('')
     const [nodes, setNodes] = useState({})
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
     const [categoryExpanded, setCategoryExpanded] = useState({})
 
     const anchorRef = useRef(null)
@@ -106,7 +106,7 @@ const AddNodes = ({ nodesData, node }) => {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
             return
         }
-        setOpen(false)
+        // setOpen(false)
     }
 
     const handleToggle = () => {
@@ -127,7 +127,7 @@ const AddNodes = ({ nodesData, node }) => {
     }, [open])
 
     useEffect(() => {
-        if (node) setOpen(false)
+        // if (node) setOpen(false)
     }, [node])
 
     useEffect(() => {
@@ -137,7 +137,7 @@ const AddNodes = ({ nodesData, node }) => {
     return (
         <>
             <StyledFab
-                sx={{ left: 20, top: 20 }}
+                // sx={{ left: 20, top: 20 }}
                 ref={anchorRef}
                 size='small'
                 color='primary'

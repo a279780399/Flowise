@@ -10,6 +10,7 @@ class SingleStoreExisting_VectorStores implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
     outputs: INodeOutputsValue[]
@@ -19,7 +20,8 @@ class SingleStoreExisting_VectorStores implements INode {
         this.name = 'singlestoreExisting'
         this.type = 'SingleStore'
         this.icon = 'singlestore.svg'
-        this.category = '向量存储'
+        this.category = 'Vector Stores'
+        this.categoryName = '向量存储'
         this.description = '从SingleStore向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

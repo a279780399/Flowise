@@ -256,7 +256,7 @@ const AddNodes = ({ nodesData, node }) => {
                                                                 aria-controls={`nodes-accordian-${category}`}
                                                                 id={`nodes-accordian-header-${category}`}
                                                             >
-                                                                <Typography variant='h5'>{category}</Typography>
+                                                                <Typography variant='h5'>{nodes[category][0].categoryName}</Typography>
                                                             </AccordionSummary>
                                                             <AccordionDetails>
                                                                 {nodes[category].map((node, index) => (

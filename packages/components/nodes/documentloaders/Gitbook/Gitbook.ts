@@ -9,6 +9,7 @@ class Gitbook_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs?: INodeParams[]
 
@@ -17,7 +18,8 @@ class Gitbook_DocumentLoaders implements INode {
         this.name = 'gitbook'
         this.type = 'Document'
         this.icon = 'gitbook.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载GitBook数据`
         this.baseClasses = [this.type]
         this.inputs = [

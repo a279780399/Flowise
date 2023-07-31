@@ -9,6 +9,7 @@ class ZapierNLA_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class ZapierNLA_Tools implements INode {
         this.name = 'zapierNLA'
         this.type = 'ZapierNLA'
         this.icon = 'zapier.png'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '通过自然语言的API接口,可以访问Zapier平台上面的应用程序和工作流操作。'
         this.inputs = [
             {

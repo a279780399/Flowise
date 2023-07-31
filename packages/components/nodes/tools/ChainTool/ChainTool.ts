@@ -10,6 +10,7 @@ class ChainTool_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -18,7 +19,8 @@ class ChainTool_Tools implements INode {
         this.name = 'chainTool'
         this.type = '链工具'
         this.icon = 'chaintool.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '将一个工具链设置为某个代理程序允许调用或使用的工具之一。'
         this.baseClasses = [this.type, ...getBaseClasses(ChainTool)]
         this.inputs = [

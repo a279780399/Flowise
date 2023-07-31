@@ -11,6 +11,7 @@ class Cheerio_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class Cheerio_DocumentLoaders implements INode {
         this.name = 'cheerioWebScraper'
         this.type = 'Document'
         this.icon = 'cheerio.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载网页数据`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -9,6 +9,7 @@ class MarkdownTextSplitter_TextSplitters implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class MarkdownTextSplitter_TextSplitters implements INode {
         this.name = 'markdownTextSplitter'
         this.type = 'Markdown文本切分器'
         this.icon = 'markdownTextSplitter.svg'
-        this.category = '文本切分器'
+        this.category = 'Text Splitters'
+        this.categoryName = '文本切分器'
         this.description = `根据Markdown格式文档中的标题,拆分内容成多个文档。`
         this.baseClasses = [this.type, ...getBaseClasses(MarkdownTextSplitter)]
         this.inputs = [

@@ -11,6 +11,7 @@ class ZepMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class ZepMemory_Memory implements INode {
         this.name = 'ZepMemory'
         this.type = 'ZepMemory'
         this.icon = 'zep.png'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '总结对话内容,并将生成的记忆存储在Zep服务中。'
         this.baseClasses = [this.type, ...getBaseClasses(ZepMemory)]
         this.inputs = [

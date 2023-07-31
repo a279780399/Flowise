@@ -8,6 +8,7 @@ class ChatHuggingFace_ChatModels implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class ChatHuggingFace_ChatModels implements INode {
         this.name = 'chatHuggingFace'
         this.type = 'ChatHuggingFace'
         this.icon = 'huggingface.png'
-        this.category = '对话模型'
+        this.category = 'Chat Models'
+        this.categoryName = '对话模型'
         this.description = 'HuggingFace大语言模型'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(HuggingFaceInference)]
         this.inputs = [

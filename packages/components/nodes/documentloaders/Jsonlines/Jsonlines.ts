@@ -9,6 +9,7 @@ class Jsonlines_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Jsonlines_DocumentLoaders implements INode {
         this.name = 'jsonlinesFile'
         this.type = 'Document'
         this.icon = 'jsonlines.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载JSON Lines文件`
         this.baseClasses = [this.type]
         this.inputs = [

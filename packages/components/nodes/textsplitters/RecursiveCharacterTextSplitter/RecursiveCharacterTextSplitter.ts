@@ -9,6 +9,7 @@ class RecursiveCharacterTextSplitter_TextSplitters implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class RecursiveCharacterTextSplitter_TextSplitters implements INode {
         this.name = 'recursiveCharacterTextSplitter'
         this.type = '递归字符文本切分器'
         this.icon = 'textsplitter.svg'
-        this.category = '文本切分器'
+        this.category = 'Text Splitters'
+        this.categoryName = '文本切分器'
         this.description = `使用不同的字符递归地拆分文档,首先使用"\\n\\n",然后使用"\\n",最后使用" "`
         this.baseClasses = [this.type, ...getBaseClasses(RecursiveCharacterTextSplitter)]
         this.inputs = [

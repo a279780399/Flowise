@@ -11,6 +11,7 @@ class Puppeteer_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class Puppeteer_DocumentLoaders implements INode {
         this.name = 'puppeteerWebScraper'
         this.type = 'Document'
         this.icon = 'puppeteer.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载网页数据`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -10,6 +10,7 @@ class MotorMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -18,7 +19,8 @@ class MotorMemory_Memory implements INode {
         this.name = 'motorheadMemory'
         this.type = 'MotorheadMemory'
         this.icon = 'motorhead.png'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '保存之前的对话内容和上下文,从而更好地进行回应。'
         this.baseClasses = [this.type, ...getBaseClasses(MotorheadMemory)]
         this.inputs = [

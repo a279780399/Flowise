@@ -9,6 +9,7 @@ class DynamoDb_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class DynamoDb_Memory implements INode {
         this.name = 'DynamoDBChatMemory'
         this.type = 'DynamoDBChatMemory'
         this.icon = 'dynamodb.svg'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '将对话内容存储在DynamoDB的数据库表中。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [

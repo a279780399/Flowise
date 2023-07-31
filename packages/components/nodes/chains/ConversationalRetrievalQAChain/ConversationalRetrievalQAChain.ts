@@ -34,6 +34,7 @@ class ConversationalRetrievalQAChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -43,7 +44,8 @@ class ConversationalRetrievalQAChain_Chains implements INode {
         this.name = 'conversationalRetrievalQAChain'
         this.type = 'ConversationalRetrievalQAChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '文档问答 - 基于检索问答链构建,提供聊天历史组件'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationalRetrievalQAChain)]
         this.inputs = [

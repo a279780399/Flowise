@@ -9,6 +9,7 @@ class CharacterTextSplitter_TextSplitters implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class CharacterTextSplitter_TextSplitters implements INode {
         this.name = 'characterTextSplitter'
         this.type = '字符文本拆分器'
         this.icon = 'textsplitter.svg'
-        this.category = '文本切分器'
+        this.category = 'Text Splitters'
+        this.categoryName = '文本切分器'
         this.description = `根据特定字符来实现,默认使用两个连续的换行符(\\n\\n)作为拆分标志。`
         this.baseClasses = [this.type, ...getBaseClasses(CharacterTextSplitter)]
         this.inputs = [

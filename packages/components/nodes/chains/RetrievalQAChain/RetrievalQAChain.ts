@@ -11,6 +11,7 @@ class RetrievalQAChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -20,7 +21,8 @@ class RetrievalQAChain_Chains implements INode {
         this.name = 'retrievalQAChain'
         this.type = 'RetrievalQAChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '基于检索文档回答问题的问答链'
         this.baseClasses = [this.type, ...getBaseClasses(RetrievalQAChain)]
         this.inputs = [

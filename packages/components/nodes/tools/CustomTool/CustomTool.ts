@@ -11,6 +11,7 @@ class CustomTool_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class CustomTool_Tools implements INode {
         this.name = 'customTool'
         this.type = '自定义工具'
         this.icon = 'customtool.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = `使用您自己创建的自定义工具,以实现聊天流程。`
         this.inputs = [
             {

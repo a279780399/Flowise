@@ -9,6 +9,7 @@ class SerpAPI_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class SerpAPI_Tools implements INode {
         this.name = 'serpAPI'
         this.type = 'SerpAPI'
         this.icon = 'serp.png'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '这是一个封装了SerpAPI的包装器,通过它可以实时访问Google搜索引擎的搜索结果。'
         this.inputs = [
             {

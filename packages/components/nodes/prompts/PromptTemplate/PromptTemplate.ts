@@ -9,6 +9,7 @@ class PromptTemplate_Prompts implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class PromptTemplate_Prompts implements INode {
         this.name = 'promptTemplate'
         this.type = '提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词'
+        this.category = 'Prompts'
+        this.categoryName = '提示词'
         this.description = '大语言模型基础提示词模板'
         this.baseClasses = [...getBaseClasses(PromptTemplate)]
         this.inputs = [

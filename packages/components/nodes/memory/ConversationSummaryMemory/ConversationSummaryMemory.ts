@@ -10,6 +10,7 @@ class ConversationSummaryMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -18,7 +19,8 @@ class ConversationSummaryMemory_Memory implements INode {
         this.name = 'conversationSummaryMemory'
         this.type = 'ConversationSummaryMemory'
         this.icon = 'memory.svg'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '总结对话内容,并将当前的摘要存储下来作为记忆。'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationSummaryMemory)]
         this.inputs = [

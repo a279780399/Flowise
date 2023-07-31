@@ -9,6 +9,7 @@ class AIPlugin implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs?: INodeParams[]
 
@@ -17,7 +18,8 @@ class AIPlugin implements INode {
         this.name = 'aiPlugin'
         this.type = 'AIPlugin'
         this.icon = 'aiplugin.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '使用ChatGPT插件URL来执行操作'
         this.baseClasses = [this.type, ...getBaseClasses(AIPluginTool)]
         this.inputs = [

@@ -11,6 +11,7 @@ class POSTApiChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -20,7 +21,8 @@ class POSTApiChain_Chains implements INode {
         this.name = 'postApiChain'
         this.type = 'POSTApiChain'
         this.icon = 'apichain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '针对POST API运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [

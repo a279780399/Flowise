@@ -12,6 +12,7 @@ class RedisBackedChatMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -20,7 +21,8 @@ class RedisBackedChatMemory_Memory implements INode {
         this.name = 'RedisBackedChatMemory'
         this.type = 'RedisBackedChatMemory'
         this.icon = 'redis.svg'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '总结对话内容,并将生成的记忆存储在Redis服务器中。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [

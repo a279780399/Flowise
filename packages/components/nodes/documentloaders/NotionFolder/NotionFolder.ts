@@ -9,6 +9,7 @@ class NotionFolder_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class NotionFolder_DocumentLoaders implements INode {
         this.name = 'notionFolder'
         this.type = 'Document'
         this.icon = 'notion.png'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = '从导出并解压的Notion文件夹中加载数据'
         this.baseClasses = [this.type]
         this.inputs = [

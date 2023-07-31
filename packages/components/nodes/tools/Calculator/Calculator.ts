@@ -9,6 +9,7 @@ class Calculator_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
 
     constructor() {
@@ -16,7 +17,8 @@ class Calculator_Tools implements INode {
         this.name = 'calculator'
         this.type = '计算器'
         this.icon = 'calculator.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '对系统的响应内容执行某些计算。'
         this.baseClasses = [this.type, ...getBaseClasses(Calculator)]
     }

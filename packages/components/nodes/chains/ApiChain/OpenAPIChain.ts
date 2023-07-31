@@ -10,6 +10,7 @@ class OpenApiChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -19,7 +20,8 @@ class OpenApiChain_Chains implements INode {
         this.name = 'openApiChain'
         this.type = 'openApiChain'
         this.icon = 'openapi.png'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '针对OpenAPI运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [

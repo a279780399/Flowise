@@ -9,6 +9,7 @@ class BraveSearchAPI_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class BraveSearchAPI_Tools implements INode {
         this.name = 'braveSearchAPI'
         this.type = 'BraveSearchAPI'
         this.icon = 'brave.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '这是一个封装了BraveSearch API的包装器,通过它可以实时访问BraveSearch引擎的搜索结果。'
         this.inputs = [
             {

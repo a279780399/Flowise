@@ -7,6 +7,7 @@ class PromptRetriever_Retrievers implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -15,7 +16,8 @@ class PromptRetriever_Retrievers implements INode {
         this.name = 'promptRetriever'
         this.type = '提示词检索器'
         this.icon = 'promptretriever.svg'
-        this.category = '检索器'
+        this.category = 'Retrievers'
+        this.categoryName = '检索器'
         this.description = '存储提示模板以及对应的名称和描述,这样后面多提示链系统可以查询到这些提示模板。'
         this.baseClasses = [this.type]
         this.inputs = [

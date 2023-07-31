@@ -12,6 +12,7 @@ class SingleStoreUpsert_VectorStores implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
     outputs: INodeOutputsValue[]
@@ -21,7 +22,8 @@ class SingleStoreUpsert_VectorStores implements INode {
         this.name = 'singlestoreUpsert'
         this.type = 'SingleStore'
         this.icon = 'singlestore.svg'
-        this.category = '向量存储'
+        this.category = 'Vector Stores'
+        this.categoryName = '向量存储'
         this.description = '将文档向量上传并合并到SingleStore的向量索引中,如果文档已经存在就更新向量,如果不存在就插入新的向量。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

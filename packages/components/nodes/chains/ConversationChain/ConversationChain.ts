@@ -17,6 +17,7 @@ class ConversationChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -26,7 +27,8 @@ class ConversationChain_Chains implements INode {
         this.name = 'conversationChain'
         this.type = 'ConversationChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '具有记忆能力的专门针对聊天的会话链'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationChain)]
         this.inputs = [

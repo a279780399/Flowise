@@ -9,6 +9,7 @@ class Subtitles_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Subtitles_DocumentLoaders implements INode {
         this.name = 'subtitlesFile'
         this.type = 'Document'
         this.icon = 'subtitlesFile.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `从subtitles文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -9,6 +9,7 @@ class AzureChatOpenAI_ChatModels implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -18,7 +19,8 @@ class AzureChatOpenAI_ChatModels implements INode {
         this.name = 'azureChatOpenAI'
         this.type = 'AzureChatOpenAI'
         this.icon = 'Azure.svg'
-        this.category = '对话模型'
+        this.category = 'Chat Models'
+        this.categoryName = '对话模型'
         this.description = '封装了Azure OpenAI的大型语言模型服务,通过Chat endpoint来使用这些模型进行聊天交互。'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [

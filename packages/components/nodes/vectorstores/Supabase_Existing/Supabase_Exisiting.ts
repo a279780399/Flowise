@@ -11,6 +11,7 @@ class Supabase_Existing_VectorStores implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
     outputs: INodeOutputsValue[]
@@ -20,7 +21,8 @@ class Supabase_Existing_VectorStores implements INode {
         this.name = 'supabaseExistingIndex'
         this.type = 'Supabase'
         this.icon = 'supabase.svg'
-        this.category = '向量存储'
+        this.category = 'Vector Stores'
+        this.categoryName = '向量存储'
         this.description = '从Supabase向量数据库中加载已经存在的索引'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

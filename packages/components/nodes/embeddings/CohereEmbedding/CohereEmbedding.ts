@@ -8,6 +8,7 @@ class CohereEmbedding_Embeddings implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class CohereEmbedding_Embeddings implements INode {
         this.name = 'cohereEmbeddings'
         this.type = 'Cohere嵌入向量'
         this.icon = 'cohere.png'
-        this.category = '嵌入向量'
+        this.category = 'Embeddings'
+        this.categoryName = '嵌入向量'
         this.description = 'Cohere 提供了API接口,可以为给定的文本生成对应的嵌入向量。'
         this.baseClasses = [this.type, ...getBaseClasses(CohereEmbeddings)]
         this.inputs = [

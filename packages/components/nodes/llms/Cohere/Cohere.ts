@@ -8,6 +8,7 @@ class Cohere_LLMs implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class Cohere_LLMs implements INode {
         this.name = 'cohere'
         this.type = 'Cohere'
         this.icon = 'cohere.png'
-        this.category = '大型语言模型'
+        this.category = 'LLMs'
+        this.categoryName = '大型语言模型'
         this.description = 'Cohere大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(Cohere)]
         this.inputs = [

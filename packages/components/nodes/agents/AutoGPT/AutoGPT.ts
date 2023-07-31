@@ -12,6 +12,7 @@ class AutoGPT_Agents implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class AutoGPT_Agents implements INode {
         this.label = 'AutoGPT'
         this.name = 'autoGPT'
         this.type = 'AutoGPT'
-        this.category = '代理'
+        this.category = 'Agents'
+        this.categoryName = '代理'
         this.icon = 'autogpt.png'
         this.description = '具有自主思维的自治智能代理'
         this.baseClasses = ['AutoGPT']

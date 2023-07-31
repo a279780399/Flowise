@@ -49,8 +49,8 @@ const ChatbotFull = () => {
                     getSpecificChatflowApi.request(chatflowId)
                 } else {
                     setLoginDialogProps({
-                        title: 'Login',
-                        confirmButtonName: 'Login'
+                        title: '登录',
+                        confirmButtonName: '登录'
                     })
                     setLoginDialogOpen(true)
                 }
@@ -63,8 +63,8 @@ const ChatbotFull = () => {
         if (getSpecificChatflowApi.error) {
             if (getSpecificChatflowApi.error?.response?.status === 401) {
                 setLoginDialogProps({
-                    title: 'Login',
-                    confirmButtonName: 'Login'
+                    title: '登录',
+                    confirmButtonName: '登录'
                 })
                 setLoginDialogOpen(true)
             }

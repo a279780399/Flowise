@@ -14,6 +14,7 @@ class OpenAIFunctionAgent_Agents implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -21,7 +22,8 @@ class OpenAIFunctionAgent_Agents implements INode {
         this.label = 'OpenAI函数代理'
         this.name = 'openAIFunctionAgent'
         this.type = '代理执行器'
-        this.category = '代理'
+        this.category = 'Agents'
+        this.categoryName = '代理'
         this.icon = 'openai.png'
         this.description = `这个代理利用了OpenAI的函数调用功能,来选择需要调用的工具以及相应的调用参数。`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]

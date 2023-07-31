@@ -9,6 +9,7 @@ class Confluence_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Confluence_DocumentLoaders implements INode {
         this.name = 'confluence'
         this.type = 'Document'
         this.icon = 'confluence.png'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载Confluence文档`
         this.baseClasses = [this.type]
         this.inputs = [

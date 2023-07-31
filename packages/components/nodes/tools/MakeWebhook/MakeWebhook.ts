@@ -9,6 +9,7 @@ class MakeWebhook_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class MakeWebhook_Tools implements INode {
         this.name = 'makeWebhook'
         this.type = 'MakeWebhook'
         this.icon = 'make.png'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '在Make.com这个开发平台上,执行网络钩子的调用。'
         this.inputs = [
             {

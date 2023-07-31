@@ -11,6 +11,7 @@ class WebBrowser_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class WebBrowser_Tools implements INode {
         this.name = 'webBrowser'
         this.type = 'WebBrowser'
         this.icon = 'webBrowser.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '使代理程序具有访问网站和从网站提取信息的能力。也就是说通过这个功能,代理可以访问网站并抓取需要的信息。'
         this.inputs = [
             {

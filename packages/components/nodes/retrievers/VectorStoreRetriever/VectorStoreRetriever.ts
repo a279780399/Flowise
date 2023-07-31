@@ -8,6 +8,7 @@ class VectorStoreRetriever_Retrievers implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -16,7 +17,8 @@ class VectorStoreRetriever_Retrievers implements INode {
         this.name = 'vectorStoreRetriever'
         this.type = '向量存储检索器'
         this.icon = 'vectorretriever.svg'
-        this.category = '检索器'
+        this.category = 'Retrievers'
+        this.categoryName = '检索器'
         this.description = '将向量存储模型存储为一个检索器,这样后续多提示链系统就可以查询使用这个检索器。'
         this.baseClasses = [this.type]
         this.inputs = [

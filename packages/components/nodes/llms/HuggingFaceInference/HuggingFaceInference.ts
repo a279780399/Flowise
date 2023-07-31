@@ -8,6 +8,7 @@ class HuggingFaceInference_LLMs implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class HuggingFaceInference_LLMs implements INode {
         this.name = 'huggingFaceInference_LLMs'
         this.type = 'HuggingFaceInference'
         this.icon = 'huggingface.png'
-        this.category = '大型语言模型'
+        this.category = 'LLMs'
+        this.categoryName = '大型语言模型'
         this.description = 'HuggingFace大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInference)]
         this.inputs = [

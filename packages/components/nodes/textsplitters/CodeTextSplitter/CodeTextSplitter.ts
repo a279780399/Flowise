@@ -13,6 +13,7 @@ class CodeTextSplitter_TextSplitters implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
     constructor() {
@@ -20,7 +21,8 @@ class CodeTextSplitter_TextSplitters implements INode {
         this.name = 'codeTextSplitter'
         this.type = 'Code 文本切分器'
         this.icon = 'codeTextSplitter.svg'
-        this.category = '文本切分器'
+        this.category = 'Text Splitters'
+        this.categoryName = '文本切分器'
         this.description = `根据特定语言的语法结构,来拆分文档。`
         this.baseClasses = [this.type, ...getBaseClasses(RecursiveCharacterTextSplitter)]
         this.inputs = [

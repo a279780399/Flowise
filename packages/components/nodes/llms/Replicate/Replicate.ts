@@ -8,6 +8,7 @@ class Replicate_LLMs implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class Replicate_LLMs implements INode {
         this.name = 'replicate'
         this.type = 'Replicate'
         this.icon = 'replicate.svg'
-        this.category = '大型语言模型'
+        this.category = 'LLMs'
+        this.categoryName = '大型语言模型'
         this.description = 'Replicate大型语言模型'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(Replicate)]
         this.inputs = [

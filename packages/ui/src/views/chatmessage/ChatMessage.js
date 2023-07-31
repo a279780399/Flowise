@@ -364,7 +364,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                             onKeyDown={handleEnter}
                             id='userInput'
                             name='userInput'
-                            placeholder={loading ? 'Waiting for response...' : 'Type your question...'}
+                            placeholder={loading ? '响应中...' : '输入你的问题...'}
                             value={userInput}
                             onChange={onChange}
                             multiline={true}

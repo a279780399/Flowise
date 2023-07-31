@@ -9,6 +9,7 @@ class BufferMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class BufferMemory_Memory implements INode {
         this.name = 'bufferMemory'
         this.type = 'BufferMemory'
         this.icon = 'memory.svg'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '保存之前的对话内容和上下文,从而更好地进行回应。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [

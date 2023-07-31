@@ -14,6 +14,7 @@ class ConversationalAgent_Agents implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -21,7 +22,8 @@ class ConversationalAgent_Agents implements INode {
         this.label = 'Conversational'
         this.name = 'conversationalAgent'
         this.type = '代理执行器'
-        this.category = '代理'
+        this.category = 'Agents'
+        this.categoryName = '代理'
         this.icon = 'agent.svg'
         this.description = '针对聊天模型的会话式代理,它将利用特定的聊天提示进行交互。'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]

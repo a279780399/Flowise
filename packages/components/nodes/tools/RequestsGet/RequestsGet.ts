@@ -9,6 +9,7 @@ class RequestsGet_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class RequestsGet_Tools implements INode {
         this.name = 'requestsGet'
         this.type = 'RequestsGet'
         this.icon = 'requestsget.svg'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '执行http Get请求'
         this.baseClasses = [this.type, ...getBaseClasses(RequestsGetTool)]
         this.inputs = [

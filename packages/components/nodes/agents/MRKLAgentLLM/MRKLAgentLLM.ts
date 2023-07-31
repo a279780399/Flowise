@@ -12,6 +12,7 @@ class MRKLAgentLLM_Agents implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -19,7 +20,8 @@ class MRKLAgentLLM_Agents implements INode {
         this.label = 'MRKL优化语言模型代理'
         this.name = 'mrklAgentLLM'
         this.type = '代理执行器'
-        this.category = '代理'
+        this.category = 'Agents'
+        this.categoryName = '代理'
         this.icon = 'agent.svg'
         this.description = '该代理基于ReAct框架进行决策,且针对大语言模型进行了优化。'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]

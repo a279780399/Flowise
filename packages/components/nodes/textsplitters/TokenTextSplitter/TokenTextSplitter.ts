@@ -10,6 +10,7 @@ class TokenTextSplitter_TextSplitters implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -18,7 +19,8 @@ class TokenTextSplitter_TextSplitters implements INode {
         this.name = 'tokenTextSplitter'
         this.type = 'Token文本切分器'
         this.icon = 'tiktoken.svg'
-        this.category = '文本切分器'
+        this.category = 'Text Splitters'
+        this.categoryName = '文本切分器'
         this.description = `通过将一段原始文本转换成BPE Tokens标记,然后将这些BPE Tokens标记拆分成块,最后将每个块内的BPE Tokens标记转换回文本,来拆分原始文本字符串。`
         this.baseClasses = [this.type, ...getBaseClasses(TokenTextSplitter)]
         this.inputs = [

@@ -214,7 +214,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                             }}
                             defaultValue={flowName}
                         />
-                        <ButtonBase title='Save Name' sx={{ borderRadius: '50%' }}>
+                        <ButtonBase title='保存' sx={{ borderRadius: '50%' }}>
                             <Avatar
                                 variant='rounded'
                                 sx={{
@@ -235,7 +235,7 @@ const CanvasHeader = ({ chatflow, handleSaveFlow, handleDeleteFlow, handleLoadFl
                                 <IconCheck stroke={1.5} size='1.3rem' />
                             </Avatar>
                         </ButtonBase>
-                        <ButtonBase title='Cancel' sx={{ borderRadius: '50%' }}>
+                        <ButtonBase title='取消' sx={{ borderRadius: '50%' }}>
                             <Avatar
                                 variant='rounded'
                                 sx={{

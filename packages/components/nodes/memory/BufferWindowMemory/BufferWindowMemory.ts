@@ -9,6 +9,7 @@ class BufferWindowMemory_Memory implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class BufferWindowMemory_Memory implements INode {
         this.name = 'bufferWindowMemory'
         this.type = 'BufferWindowMemory'
         this.icon = 'memory.svg'
-        this.category = '存储器'
+        this.category = 'Memory'
+        this.categoryName = '存储器'
         this.description = '使用一个大小为k的窗口来显示最后k次对话的问答内容,作为记忆来使用。'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [

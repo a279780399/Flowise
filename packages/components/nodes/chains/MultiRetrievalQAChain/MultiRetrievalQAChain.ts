@@ -10,6 +10,7 @@ class MultiRetrievalQAChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -19,7 +20,8 @@ class MultiRetrievalQAChain_Chains implements INode {
         this.name = 'multiRetrievalQAChain'
         this.type = 'MultiRetrievalQAChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '自动从多个检索器中选择合适的向量存储的问答链'
         this.baseClasses = [this.type, ...getBaseClasses(MultiRetrievalQAChain)]
         this.inputs = [

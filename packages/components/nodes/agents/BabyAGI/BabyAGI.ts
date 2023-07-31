@@ -10,6 +10,7 @@ class BabyAGI_Agents implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class BabyAGI_Agents implements INode {
         this.label = 'BabyAGI'
         this.name = 'babyAGI'
         this.type = 'BabyAGI'
-        this.category = '代理'
+        this.category = 'Agents'
+        this.categoryName = '代理'
         this.icon = 'babyagi.jpg'
         this.description = '面向目标的任务驱动型自治代理,可以根据目标创建新任务并重新优先排序任务列表。'
         this.baseClasses = ['BabyAGI']

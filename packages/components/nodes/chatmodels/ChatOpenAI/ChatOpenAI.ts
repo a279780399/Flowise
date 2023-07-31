@@ -8,6 +8,7 @@ class ChatOpenAI_ChatModels implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class ChatOpenAI_ChatModels implements INode {
         this.name = 'chatOpenAI'
         this.type = 'ChatOpenAI'
         this.icon = 'openai.png'
-        this.category = '对话模型'
+        this.category = 'Chat Models'
+        this.categoryName = '对话模型'
         this.description = '使用聊天端点的OpenAI大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.inputs = [

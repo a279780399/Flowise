@@ -9,6 +9,7 @@ class Docx_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Docx_DocumentLoaders implements INode {
         this.name = 'docxFile'
         this.type = 'Document'
         this.icon = 'Docx.png'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `加载DOCX文件`
         this.baseClasses = [this.type]
         this.inputs = [

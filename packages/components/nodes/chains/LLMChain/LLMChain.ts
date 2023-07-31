@@ -10,6 +10,7 @@ class LLMChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -20,7 +21,8 @@ class LLMChain_Chains implements INode {
         this.name = 'llmChain'
         this.type = 'LLMChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '针对LLM运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(LLMChain)]
         this.inputs = [

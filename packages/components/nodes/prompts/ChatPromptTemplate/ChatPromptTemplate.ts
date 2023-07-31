@@ -9,6 +9,7 @@ class ChatPromptTemplate_Prompts implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class ChatPromptTemplate_Prompts implements INode {
         this.name = 'chatPromptTemplate'
         this.type = '聊天提示词模板'
         this.icon = 'prompt.svg'
-        this.category = '提示词'
+        this.category = 'Prompts'
+        this.categoryName = '提示词'
         this.description = '聊天提示词模板'
         this.baseClasses = [this.type, ...getBaseClasses(ChatPromptTemplate)]
         this.inputs = [

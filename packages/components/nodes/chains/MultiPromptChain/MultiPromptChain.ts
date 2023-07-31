@@ -10,6 +10,7 @@ class MultiPromptChain_Chains implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     description: string
     inputs: INodeParams[]
@@ -19,7 +20,8 @@ class MultiPromptChain_Chains implements INode {
         this.name = 'multiPromptChain'
         this.type = 'MultiPromptChain'
         this.icon = 'chain.svg'
-        this.category = '链'
+        this.category = 'Chains'
+        this.categoryName = '链'
         this.description = '链自动从多个提示词模板中选择合适的提示'
         this.baseClasses = [this.type, ...getBaseClasses(MultiPromptChain)]
         this.inputs = [

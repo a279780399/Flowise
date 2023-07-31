@@ -9,6 +9,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -18,7 +19,8 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
         this.name = 'azureOpenAIEmbeddings'
         this.type = 'Azure嵌入向量'
         this.icon = 'Azure.svg'
-        this.category = '嵌入向量'
+        this.category = 'Embeddings'
+        this.categoryName = '嵌入向量'
         this.description = 'Azure OpenAI 提供了API接口,可以为给定的文本生成对应的嵌入向量。'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.inputs = [

@@ -12,6 +12,7 @@ class InMemoryVectorStore_VectorStores implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
     outputs: INodeOutputsValue[]
@@ -21,7 +22,8 @@ class InMemoryVectorStore_VectorStores implements INode {
         this.name = 'memoryVectorStore'
         this.type = 'Memory'
         this.icon = 'memory.svg'
-        this.category = '向量存储'
+        this.category = 'Vector Stores'
+        this.categoryName = '向量存储'
         this.description = '基于内存中的向量存储,它可以存储向量(embeddings),并实现高效的精确线性搜索,以找出与查询向量最相似的向量表示。'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.inputs = [

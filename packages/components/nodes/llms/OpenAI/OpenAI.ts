@@ -8,6 +8,7 @@ class OpenAI_LLMs implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     description: string
     baseClasses: string[]
     inputs: INodeParams[]
@@ -17,7 +18,8 @@ class OpenAI_LLMs implements INode {
         this.name = 'openAI'
         this.type = 'OpenAI'
         this.icon = 'openai.png'
-        this.category = '大型语言模型'
+        this.category = 'LLMs'
+        this.categoryName = '大型语言模型'
         this.description = 'OpenAI大型语言模型'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAI)]
         this.inputs = [

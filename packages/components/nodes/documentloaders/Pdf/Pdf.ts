@@ -9,6 +9,7 @@ class Pdf_DocumentLoaders implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Pdf_DocumentLoaders implements INode {
         this.name = 'pdfFile'
         this.type = 'Document'
         this.icon = 'pdf.svg'
-        this.category = '文档加载器'
+        this.category = 'Document Loaders'
+        this.categoryName = '文档加载器'
         this.description = `从PDF文件加载数据`
         this.baseClasses = [this.type]
         this.inputs = [

@@ -9,6 +9,7 @@ class Serper_Tools implements INode {
     type: string
     icon: string
     category: string
+    categoryName: string
     baseClasses: string[]
     inputs: INodeParams[]
 
@@ -17,7 +18,8 @@ class Serper_Tools implements INode {
         this.name = 'serper'
         this.type = 'Serper'
         this.icon = 'serper.png'
-        this.category = '工具'
+        this.category = 'Tools'
+        this.categoryName = '工具'
         this.description = '这是一个封装了Serper.dev服务的包装器,Serper.dev提供了Google搜索API的接口。'
         this.inputs = [
             {

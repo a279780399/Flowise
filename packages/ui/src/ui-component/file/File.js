@@ -63,7 +63,7 @@ export const File = ({ value, fileType, onChange, disabled = false }) => {
                     marginBottom: '1rem'
                 }}
             >
-                {myValue ? getFileName(myValue) : 'Choose a file to upload'}
+                {myValue ? getFileName(myValue) : '选择一个文件上传'}
             </span>
             <Button
                 disabled={disabled}

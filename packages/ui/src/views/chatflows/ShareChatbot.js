@@ -135,7 +135,7 @@ const ShareChatbot = () => {
             })
             if (saveResp.data) {
                 enqueueSnackbar({
-                    message: 'Chatbot Configuration Saved',
+                    message: '聊天机器人配置成功',
                     options: {
                         key: new Date().getTime() + Math.random(),
                         variant: 'success',
@@ -172,7 +172,7 @@ const ShareChatbot = () => {
             const saveResp = await chatflowsApi.updateChatflow(chatflowid, { isPublic: checked })
             if (saveResp.data) {
                 enqueueSnackbar({
-                    message: 'Chatbot Configuration Saved',
+                    message: '聊天机器人配置成功',
                     options: {
                         key: new Date().getTime() + Math.random(),
                         variant: 'success',

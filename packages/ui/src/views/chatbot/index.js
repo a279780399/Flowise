@@ -76,6 +76,7 @@ const ChatbotFull = () => {
             const chatflowData = getSpecificChatflowFromPublicApi.data || getSpecificChatflowApi.data
             setChatflow(chatflowData)
             if (chatflowData.chatbotConfig) {
+                console.log(chatflowData.chatbotConfig)
                 try {
                     setChatbotTheme(JSON.parse(chatflowData.chatbotConfig))
                 } catch (e) {
